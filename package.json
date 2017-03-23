@@ -1,0 +1,77 @@
+{
+  "name": "koa-react-starter",
+  "version": "1.0.0",
+  "description": "A great way to start your app with koa and react!",
+  "main": "server.js",
+  "keywords": [
+    "koa",
+    "react",
+    "starter"
+  ],
+  "author": "Caio Kinzrel Filho (caiokf@gmail.com)",
+  "license": "ISC",
+  "homepage": "https://github.com/caiokf/koa-react-starter#readme",
+  "scripts": {
+    "start": "gulp",
+    "test": "mocha ./server/tests/ && ./node_modules/.bin/eslint .",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha ./server/tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caiokf/koa-react-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caiokf/koa-react-starter/issues"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel-core": "^6.24.0",
+    "babel-polyfill": "^6.23.0",
+    "koa": "^2.2.0",
+    "koa-router": "^7.0.1",
+    "koa-static": "^3.0.0",
+    "koa-views": "^6.0.1",
+    "react": "^15.3.2",
+    "react-bootstrap": "^0.30.5",
+    "react-dom": "^15.3.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.10.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.22.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2017": "^6.22.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "babel-register": "^6.24.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-file-cache": "0.0.1",
+    "gulp-ignore": "^2.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-mocha": "^4.1.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-notify": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.0",
+    "sassify": "^2.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+gulp commit
+
+if [ $? -ne 0 ]
+then
+  echo "Please fix the problems (unit tests and/or eslint style checking) before committing"
+  exit 1
+fi
