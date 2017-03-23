@@ -7,12 +7,12 @@ export default class WorldMap extends React.Component {
     super();
     this.state = {
       data: {
-        USA: { fillKey: 'canCommunicateTo' },
-        JPN: { fillKey: 'canCommunicateTo' },
-        ITA: { fillKey: 'canCommunicateTo' },
-        CRI: { fillKey: 'canCommunicateTo' },
-        KOR: { fillKey: 'canCommunicateTo' },
-        DEU: { fillKey: 'canCommunicateTo' }
+        USA: { fillKey: 'canCommunicateTo', language: 'English' },
+        JPN: { fillKey: 'canCommunicateTo', language: 'Japanase' },
+        ITA: { fillKey: 'canCommunicateTo', language: 'Italian' },
+        CRI: { fillKey: 'canCommunicateTo', language: 'English' },
+        KOR: { fillKey: 'canCommunicateTo', language: 'Korean' },
+        DEU: { fillKey: 'canCommunicateTo', language: 'German' }
       }
     };
   }
@@ -30,7 +30,16 @@ export default class WorldMap extends React.Component {
       <div className="container">
         <div className="world-map">
         <Datamap
-          height="700"
+          responsive
+          geographyConfig={{
+            popupOnHover: true,
+            highlightOnHover: true,
+            highlightBorderColor: '#bada55',
+            popupTemplate: (geography, data) => {
+              return `<div class='hoverinfo'>${geography.properties.name}\nLanguages: ${data ? data.language : 'N/A'}`;
+            },
+            highlightBorderWidth: 3
+          }}
           data={this.state.data}
           fills={{
             defaultFill: 'rgba(36, 36, 35, 1)',
