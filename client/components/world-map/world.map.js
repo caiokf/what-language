@@ -34,11 +34,18 @@ export default class WorldMap extends React.Component {
           geographyConfig={{
             popupOnHover: true,
             highlightOnHover: true,
-            highlightBorderColor: '#bada55',
+            highlightFillColor: 'rgba(51, 53, 51, 1)',
+            highlightBorderColor: 'rgba(245, 203, 92, 1)',
+            highlightBorderWidth: 1,
+            borderWidth: 1,
+            borderOpacity: 1,
+            borderColor: 'rgba(232, 237, 223, 1)',
             popupTemplate: (geography, data) => {
-              return `<div class='hoverinfo'>${geography.properties.name}\nLanguages: ${data ? data.language : 'N/A'}`;
-            },
-            highlightBorderWidth: 3
+              return `<div class='hoverinfo'>
+                <strong>${geography.properties.name}</strong>
+                <br>
+                Languages: ${data ? data.language : 'N/A'}`;
+            }
           }}
           data={this.state.data}
           fills={{
