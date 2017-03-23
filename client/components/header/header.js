@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router";
 import { Navbar, Nav, NavItem} from "react-bootstrap";
 
-const Navigation = React.createClass({
-  render: function() {
+export default class Header extends React.Component {
+  render() {
     return (
       <nav className="navbar navbar-inverse navbar-fixed-top">
         <div className="container-fluid">
@@ -23,6 +23,4 @@ const Navigation = React.createClass({
       </nav>
     );
   }
-});
-
-export default Navigation;
+}

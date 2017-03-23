@@ -61,6 +61,7 @@ gulp.task('compile:client', () => {
       sourceMap: false // Add source map to the code
     })
     .bundle()
+    .on('error', console.error.bind(console))
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(gulp.dest(paths.clientBundleDir))

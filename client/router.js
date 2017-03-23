@@ -5,7 +5,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import MainLayout from './layouts/main.layout';
 import NotFound from './pages/not-found';
-import Home from './pages/index';
+import Home from './pages/home';
 import Error from './pages/error';
 
 import store from './store';

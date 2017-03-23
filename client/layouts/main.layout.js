@@ -1,22 +1,19 @@
 import React from "react";
 
-import Footer from "../components/footer";
-import Navigation from "../components/navigation"
+import Footer from "../components/footer/footer";
+import Header from "../components/header/header"
 
 import './main.layout.sass';
 
-const MainLayout = React.createClass({
+export default class MainLayout extends React.Component {
   render() {
     return (
       <div className="app">
-        <Navigation />
-        <main>
+        <div>
           {this.props.children}
-        </main>
+        </div>
         <Footer footerText="This site was built with react!" />
       </div>
     );
   }
-});
-
-export default MainLayout;
+}
