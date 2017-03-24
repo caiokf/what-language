@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Icon from '../icons/icon';
-import './settings.sass';
+import SettingsLanguageInput from './settings.language.input';
+
+import './settings.form.sass';
 
 class Settings extends React.Component {
   componentClasses() {
@@ -13,17 +15,21 @@ class Settings extends React.Component {
   }
 
   render() {
+    const languageElements = this.props.languagesSpoken.map(x => {
+      return (
+        <div key={x}>#{x}</div>
+      );
+    });
+
     return (
       <div className={this.componentClasses()}>
-        <form className="settings__form" action="">
-          <input className="settings__input" name="settings" type="text" placeholder="" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" />
-          <span className="settings__info">Hit enter to settings or ESC to close</span>
-        </form>
-
+        <SettingsLanguageInput />
         <div className="settings__related">
           <div className="settings__suggestion">
-            <h3>May We Suggest?</h3>
-            <p>#drone #funny #catgif #broken #lost #hilarious #good #red #blue #nono #why #yes #yesyes #aliens #green</p>
+            <h3>Languages you can speak</h3>
+            <div>
+              {languageElements}
+            </div>
           </div>
           <div className="settings__suggestion">
             <h3>Needle, Where Art Thou?</h3>
@@ -36,7 +42,10 @@ class Settings extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { opened: state.settings.get('opened') };
+  return {
+    opened: state.settings.get('opened'),
+    languagesSpoken: state.user.get('languagesSpoken'),
+  };
 };
 
 export default connect(mapStateToProps)(Settings);
