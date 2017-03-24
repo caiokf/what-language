@@ -6,11 +6,15 @@
   z-index: 1000
   @extend %fullscreen
   position: fixed
+  pointer-events: none
 
   &::before
     content: ''
     @extend %fullscreen
     background: rgba(0,0,0,0.8)
+
+  &--open
+    pointer-events: auto
 
 
 .settings__controls-panel,
