@@ -54,7 +54,6 @@ const calculateStatistics = (state, languagesSpoken) => {
   let countries = 0;
   let languages = languagesSpoken.length;
 
-  console.log(languagesSpoken);
   _.each(countriesData, country => {
     world[country.id] = country;
 

@@ -22,39 +22,35 @@ class WorldMap extends React.Component {
     return (
       <div className="container">
         <div className="world-map">
-        <Datamap
-          responsive
-          geographyConfig={{
-            popupOnHover: true,
-            highlightOnHover: true,
-            highlightFillColor: this.colors.heavyMetal,
-            highlightBorderColor: this.colors.goldYellow,
-            highlightBorderWidth: 1,
-            borderWidth: 0.25,
-            borderOpacity: 0.5,
-            borderColor: 'rgba(232, 237, 223, 1)',
-            popupTemplate: (geography, data) => {
-              return `<div class='hoverinfo'>
-                <strong>${data.name}</strong>
-                <br>
-                Languages: ${data.languages.join(', ')};
-                <br>
-                Population: ${data.population}`;
-            }
-          }}
-          data={this.props.mapData}
-          fills={{
-            defaultFill: this.colors.codGray,
-            canCommunicateTo: this.colors.goldYellow
-          }}
-          projection="mercator"
-          updateChoroplethOptions={{ reset: false }}
-        />
+          <Datamap
+            responsive
+            geographyConfig={{
+              popupOnHover: true,
+              highlightOnHover: true,
+              highlightFillColor: this.colors.heavyMetal,
+              highlightBorderColor: this.colors.goldYellow,
+              highlightBorderWidth: 1,
+              borderWidth: 0.25,
+              borderOpacity: 0.5,
+              borderColor: 'rgba(232, 237, 223, 1)',
+              popupTemplate: (geography, data) => {
+                return `<div class='hoverinfo'>
+                  <strong>${data.name}</strong>
+                  <br>
+                  Languages: ${data.languages.join(', ')};
+                  <br>
+                  Population: ${data.population}`;
+              }
+            }}
+            data={this.props.mapData}
+            fills={{
+              defaultFill: this.colors.codGray,
+              canCommunicateTo: this.colors.goldYellow
+            }}
+            projection="mercator"
+            updateChoroplethOptions={{ reset: false }}
+          />
         </div>
-        <h3 style={{ color: this.colors.goldYellow, textAlign: 'center' }}>
-          You can speak to: {this.props.howManyPeople} people ({ (this.props.howManyPeople/this.props.totalPeople) * 100 }%)<br />
-          in {this.props.howManyCountries} countries ({ (this.props.howManyCountries/this.props.totalCountries) * 100 }%)
-        </h3>
       </div>
     );
   }
@@ -64,10 +60,6 @@ const mapStateToProps = (state) => {
   return {
     languagesSpoken: state.user.get('languagesSpoken').toArray(),
     mapData: state.statistics.get('mapData'),
-    howManyPeople: state.statistics.getIn(['canSpeakTo', 'people']),
-    totalPeople:state.statistics.getIn(['world', 'people']),
-    howManyCountries:state.statistics.getIn(['canSpeakTo', 'countries']),
-    totalCountries: state.statistics.getIn(['world', 'countries']),
   };
 };
 
