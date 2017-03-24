@@ -7,8 +7,6 @@ import countriesData from '../../data/countries';
 
 class WorldMap extends React.Component {
   componentWillMount() {
-    this.props.calculateStatistics(this.props.languagesSpoken);
-
     this.colors = {
       conch: 'rgba(207, 219, 213, 1)',
       periglacialBlue: 'rgba(232, 237, 223, 1)',
@@ -58,7 +56,6 @@ class WorldMap extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    languagesSpoken: state.user.get('languagesSpoken').toArray(),
     mapData: state.statistics.get('mapData'),
   };
 };
