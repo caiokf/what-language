@@ -1,59 +1,41 @@
 @import '../../styles/index.sass'
 
 .settings__input
-  border: 0
-  background: transparent
-  border-radius: 0
-  -webkit-appearance: none
-  font-family: inherit
+  @include placeholderColor($periglacial-blue)
+  @extend %inputTransparent
+
+  display: inline-block
+  padding: 0.05em 0
+  width: 75%
+  border-bottom: 5px solid
+
   font-size: 10vw
   line-height: 1
-  display: inline-block
-  box-sizing: border-box
-  width: 75%
-  padding: 0.05em 0
   color: $tacao
-  border-bottom: 5px solid
 
   transform: scale3d(0,1,1)
   transform-origin: 0% 50%
   transition: transform 0.3s
 
-  &:focus
-    outline: none
-
-  &::-webkit-input-placeholder,
-  &:-ms-input-placeholder
-    color: $periglacial-blue
-
-  &::-moz-placeholder
-    opacity: 1
-    color: $periglacial-blue
-
-  &::-webkit-settings-cancel-button,
-  &::-webkit-settings-decoration
-    -webkit-appearance: none
-
-  &::-ms-clear
-    display: none
-
 .settings--open .settings__input
   transform: scale3d(1,1,1)
   transition-duration: 0.5s
-  
-.settings__form
+
+
+.settings__language-input-form
   margin: 5em 0
 
+
 .settings__info
-  font-size: 90%
-  font-weight: bold
   display: block
-  width: 75%
   margin: 0 auto
   padding: 0.85em 0
-  text-align: right
+  width: 75%
+
+  font-size: 90%
+  font-weight: bold
   color: $tacao
 
-  &.settings__label
-    text-align: left
-    font-size: 2rem
+
+.settings__label
+  font-size: 2rem

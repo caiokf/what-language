@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import keydown, { Keys } from 'react-keydown';
 import { closeSettings } from '../../actions/settings.actions';
@@ -30,14 +31,20 @@ class SettingsLanguageInput extends React.Component {
   }
 
   enterLanguage() {
-    let entered = this.state.language.trim();
-
-    if (entered.indexOf('-') === 0) {
-      entered = entered.slice(1, entered.length);
-      this.props.removeLanguage(entered);
-    } else {
-      this.props.addLanguage(entered);
-    }
+    const entered = this.state.language;
+    const words = entered
+      .split(' ')
+      .filter(x => !_.isEmpty(x))
+      .map(x => x.toLowerCase())
+      .map(x => x.trim())
+      .forEach(entered => {
+        if (entered.indexOf('-') === 0) {
+          entered = entered.slice(1, entered.length);
+          this.props.removeLanguage(entered);
+        } else {
+          this.props.addLanguage(entered);
+        };
+      })
 
     this.setState({ language: '' });
   }
@@ -50,8 +57,8 @@ class SettingsLanguageInput extends React.Component {
 
   render() {
     return (
-      <div className="settings__form">
-        <span className="settings__info settings__label">What languages can you speak?</span>
+      <div className="settings__language-input-form">
+        <span className="text-left settings__info settings__label">What languages can you speak?</span>
         <input className="settings__input"
           name="language"
           type="text"
@@ -64,7 +71,7 @@ class SettingsLanguageInput extends React.Component {
           onKeyDown={ this.handleInputKeydown }
           value={this.state.language}
           ref={(input) => { this.languageInput = input; }} />
-        <span className="settings__info">Hit enter to settings or ESC to close</span>
+        <span className="text-right settings__info">Hit enter to settings or ESC to close</span>
       </div>
     );
   }

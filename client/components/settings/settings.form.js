@@ -17,10 +17,10 @@ class Settings extends React.Component {
 
   componentClasses() {
     if (this.props.opened) {
-      return 'settings settings--open';
+      return 'centered settings settings--open';
     }
 
-    return 'settings settings--closed';
+    return 'centered settings settings--closed';
   }
 
   render() {

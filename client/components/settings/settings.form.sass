@@ -3,24 +3,24 @@
 .settings
   display: flex
   flex-direction: column
-  justify-content: center
-  align-items: center
-  text-align: center
-  position: fixed
   z-index: 1000
-  top: 0
-  left: 0
-  width: 100%
-  height: 100vh
+  @extend %fullscreen
+  position: fixed
 
   &::before
     content: ''
-    position: absolute
-    top: 0
-    right: 0
-    width: 100%
-    height: 100%
+    @extend %fullscreen
     background: rgba(0,0,0,0.8)
+
+
+.settings__controls-panel,
+.settings__info
+  @extend %transition-disappear
+
+
+.settings--open .settings__controls-panel,
+.settings--open .settings__info
+  @extend %transition-appear
 
 
 .settings__controls
@@ -49,27 +49,6 @@
 /* Transitions       */
 /************************/
 
-.main-wrap
-  position: relative
-  transition: transform 0.5s
-
-
-.main-wrap--move
-  transform: scale3d(0.7,0.7,1)
-
-
-.main-wrap--move .btn--settings
-  pointer-events: none
-  opacity: 0
-
-
-.settings
-  pointer-events: none
-
-
-.settings--open
-  pointer-events: auto
-
 
 .settings::before
   opacity: 0
@@ -80,31 +59,15 @@
   opacity: 1
 
 
-/* Close button */
 .btn--settings-close
   opacity: 0
   transition: opacity 0.5s
 
-
 .settings--open .btn--settings-close
   opacity: 1
-
-
-.settings__controls-panel,
-.settings__info
-  opacity: 0
-  transform: translate3d(0, 50px, 0)
-  transition: opacity 0.4s, transform 0.4s
-
-
-.settings--open .settings__controls-panel,
-.settings--open .settings__info
-  opacity: 1
-  transform: translate3d(0, 0, 0)
 
 
 a, .btn
   text-decoration: none
   color: #d17c78
   outline: none
-  

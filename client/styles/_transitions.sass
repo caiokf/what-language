@@ -1,0 +1,18 @@
+%transition-appear
+  opacity: 1
+  transform: translate3d(0, 0, 0)
+
+
+%transition-disappear
+  opacity: 0
+  transform: translate3d(0, 50px, 0)
+  transition: opacity 0.4s, transform 0.4s
+
+
+.main-wrap
+  position: relative
+  transition: transform 0.5s
+
+
+.main-wrap--move
+  transform: scale3d(0.7,0.7,1)
