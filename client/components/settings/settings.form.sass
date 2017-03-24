@@ -41,17 +41,14 @@
     margin: 0 0 0.75em 0
 
   .contents
+    overflow-wrap: break-word
     font-size: 1.15em
     line-height: 1.4
     margin: 0
 
+
 .language
   margin-right: 1em
-
-
-/************************/
-/* Transitions       */
-/************************/
 
 
 .settings::before
@@ -67,11 +64,6 @@
   opacity: 0
   transition: opacity 0.5s
 
+
 .settings--open .btn--settings-close
   opacity: 1
-
-
-a, .btn
-  text-decoration: none
-  color: #d17c78
-  outline: none
