@@ -1,3 +1,5 @@
+@import '../../styles/index.sass'
+
 .settings
   display: flex
   flex-direction: column
@@ -21,39 +23,23 @@
     background: rgba(0,0,0,0.8)
 
 
-.settings__related
+.settings__controls
   display: flex
   width: 75%
   text-align: left
   pointer-events: none
+  color: $conch
 
 
-.settings__suggestion
-  width: 50%
+.settings__controls-panel
+  h3
+    font-size: 1.35em
+    margin: 0 0 0.75em 0
 
-
-.settings__suggestion:first-child
-  padding: 0 2em 0 0
-
-
-.settings__suggestion:last-child
-  padding: 0 0 0 2em
-
-
-.settings__suggestion h3
-  font-size: 1.35em
-  margin: 0
-
-
-.settings__suggestion p
-  font-size: 1.15em
-  line-height: 1.4
-  margin: 0.75em 0 0 0
-
-
-
-
-
+  .contents
+    font-size: 1.15em
+    line-height: 1.4
+    margin: 0
 
 
 /************************/
@@ -103,43 +89,17 @@
 
 /* Search form with input and description */
 
-.settings__suggestion,
+.settings__controls-panel,
 .settings__info
   opacity: 0
   transform: translate3d(0, 50px, 0)
   transition: opacity 0.4s, transform 0.4s
 
 
-.settings--open .settings__suggestion,
+.settings--open .settings__controls-panel,
 .settings--open .settings__info
   opacity: 1
   transform: translate3d(0, 0, 0)
-
-
-.settings--open .settings__suggestion:first-child
-  transition-delay: 0.15s
-
-
-.settings--open .settings__suggestion:nth-child(2)
-  transition-delay: 0.2s
-
-
-.settings--open .settings__input
-  transform: scale3d(1,1,1)
-  transition-duration: 0.5s
-
-
-@media screen and (max-width: 40em)
-  .btn--settings-close
-    font-size: 1.25em
-
-  .settings__suggestion
-    font-size: 80%
-    width: 100%
-
-  .settings__suggestion:nth-child(2),
-  .settings__suggestion:nth-child(3)
-    display: none
 
 
 a, .btn

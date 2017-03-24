@@ -16,12 +16,28 @@ class WorldMap extends React.Component {
     }
   }
 
+  renderPopup(geography, data) {
+    return `<div class='hoverinfo'>
+      <strong>${data.name}</strong>
+      <br>
+      Languages: ${data.languages.join(', ')};
+      <br>
+      Population: ${data.population}`;
+  }
+
   render() {
     return (
       <div className="container">
         <div className="world-map">
           <Datamap
+            data={this.props.mapData}
+            projection="mercator"
             responsive
+            updateChoroplethOptions={{ reset: false }}
+            fills={{
+              defaultFill: this.colors.codGray,
+              canCommunicateTo: this.colors.goldYellow
+            }}
             geographyConfig={{
               popupOnHover: true,
               highlightOnHover: true,
@@ -31,22 +47,8 @@ class WorldMap extends React.Component {
               borderWidth: 0.25,
               borderOpacity: 0.5,
               borderColor: 'rgba(232, 237, 223, 1)',
-              popupTemplate: (geography, data) => {
-                return `<div class='hoverinfo'>
-                  <strong>${data.name}</strong>
-                  <br>
-                  Languages: ${data.languages.join(', ')};
-                  <br>
-                  Population: ${data.population}`;
-              }
+              popupTemplate: this.renderPopup
             }}
-            data={this.props.mapData}
-            fills={{
-              defaultFill: this.colors.codGray,
-              canCommunicateTo: this.colors.goldYellow
-            }}
-            projection="mercator"
-            updateChoroplethOptions={{ reset: false }}
           />
         </div>
       </div>

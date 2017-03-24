@@ -12,11 +12,13 @@ class Home extends React.Component {
   }
 
   render() {
+    const statistics = this.props.settingsOpened ? null : (<Statistics />);
+
     return (
       <div className="container">
         <SettingsToggleButton />
         <WorldMap />
-        <Statistics />
+        {statistics}
         <Settings />
       </div>
     );
@@ -25,6 +27,7 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    settingsOpened: state.settings.get('opened'),
     languagesSpoken: state.user.get('languagesSpoken').toArray(),
   };
 };

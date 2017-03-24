@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Icon from '../icons/icon';
 import SettingsLanguageInput from './settings.language.input';
+import { Col, Row } from 'react-bootstrap';
 
 import './settings.form.sass';
 
@@ -24,18 +25,22 @@ class Settings extends React.Component {
     return (
       <div className={this.componentClasses()}>
         <SettingsLanguageInput />
-        <div className="settings__related">
-          <div className="settings__suggestion">
+
+        <Row className="settings__controls">
+          <Col md={6} className="settings__controls-panel settings__languages">
             <h3> &#x21FE; Languages you can speak</h3>
-            <div>
+            <div className="contents">
               {languageElements}
             </div>
-          </div>
-          <div className="settings__suggestion">
-            <h3>&#x21FE; Needle, Where Art Thou?</h3>
-            <p>#broken #lost #good #red #funny #lala #hilarious #catgif #blue #nono #why #yes #yesyes #aliens #green #drone</p>
-          </div>
-        </div>
+          </Col>
+          <Col md={6} className="settings__controls-panel settings__options">
+            <h3>&#x21FE; Some different options?</h3>
+            <div className="contents">
+              <div>[ x ] Use only official languages</div>
+              <div>[ x ] Some other option</div>
+            </div>
+          </Col>
+        </Row>
       </div>
     );
   }
