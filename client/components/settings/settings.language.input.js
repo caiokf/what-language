@@ -1,14 +1,42 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import keydown from 'react-keydown';
+import keydown, { Keys } from 'react-keydown';
 import { closeSettings } from '../../actions/settings.actions';
+import { addLanguage } from '../../actions/user.actions';
+import { calculateStatistics } from '../../actions/statistics.actions';
 import './settings.language.input.sass';
 
-class SettingsLanguageInput extends React.Component {
+const { ENTER, ESCAPE } = Keys;
 
-  @keydown('esc')
-  escape(event) {
-    this.props.close();
+class SettingsLanguageInput extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      language: ''
+    };
+  }
+
+  @keydown(ENTER, ESCAPE)
+  handleInputKeydown(key) {
+    if (key.which === ESCAPE) {
+      this.props.close();
+    } else if (key.which === ENTER) {
+      this.addALanguage();
+    }
+  }
+
+  typing(e) {
+    this.setState({ language: e.target.value });
+  }
+
+  addALanguage() {
+    const languages = this.props.languagesSpoken;
+    languages.push(this.state.language);
+
+    this.props.addLanguage(this.state.language);
+    this.props.calculateStatistics(languages);
+    this.setState({ language: '' });
   }
 
   componentWillReceiveProps() {
@@ -19,7 +47,7 @@ class SettingsLanguageInput extends React.Component {
 
   render() {
     return (
-      <form className="settings__form" action="">
+      <div className="settings__form">
         <span className="settings__info settings__label">What languages can you speak?</span>
         <input className="settings__input"
           name="language"
@@ -29,10 +57,12 @@ class SettingsLanguageInput extends React.Component {
           autoCorrect="off"
           autoCapitalize="off"
           spellCheck="false"
-          onKeyDown={ this.escape }
+          onChange={ this.typing.bind(this) }
+          onKeyDown={ this.handleInputKeydown }
+          value={this.state.language}
           ref={(input) => { this.languageInput = input; }} />
         <span className="settings__info">Hit enter to settings or ESC to close</span>
-      </form>
+      </div>
     );
   }
 }
@@ -40,13 +70,15 @@ class SettingsLanguageInput extends React.Component {
 const mapStateToProps = (state) => {
   return {
     opened: state.settings.get('opened'),
-    languagesSpoken: state.user.get('languagesSpoken'),
+    languagesSpoken: state.user.get('languagesSpoken').toArray(),
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     close: () => dispatch(closeSettings()),
+    addLanguage: (x) => dispatch(addLanguage(x)),
+    calculateStatistics: (languagesSpoken) => dispatch(calculateStatistics(languagesSpoken)),
   };
 };
 
