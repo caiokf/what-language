@@ -26,7 +26,7 @@ class Settings extends React.Component {
   render() {
     const languageElements = this.props.languagesSpoken.map(x => {
       return (
-        <div key={x}>#{x}</div>
+        <span className="language" key={x}>#{x}</span>
       );
     });
 
