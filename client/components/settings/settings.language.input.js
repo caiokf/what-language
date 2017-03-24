@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import keydown, { Keys } from 'react-keydown';
 import { closeSettings } from '../../actions/settings.actions';
-import { addLanguage } from '../../actions/user.actions';
-import { calculateStatistics } from '../../actions/statistics.actions';
+import { addLanguage, removeLanguage, calculateStatistics } from '../../actions/statistics.actions';
 import './settings.language.input.sass';
 
 const { ENTER, ESCAPE } = Keys;
@@ -22,7 +21,7 @@ class SettingsLanguageInput extends React.Component {
     if (key.which === ESCAPE) {
       this.props.close();
     } else if (key.which === ENTER) {
-      this.addALanguage();
+      this.enterLanguage();
     }
   }
 
@@ -30,12 +29,16 @@ class SettingsLanguageInput extends React.Component {
     this.setState({ language: e.target.value });
   }
 
-  addALanguage() {
-    const languages = this.props.languagesSpoken;
-    languages.push(this.state.language);
+  enterLanguage() {
+    let entered = this.state.language.trim();
 
-    this.props.addLanguage(this.state.language);
-    this.props.calculateStatistics(languages);
+    if (entered.indexOf('-') === 0) {
+      entered = entered.slice(1, entered.length);
+      this.props.removeLanguage(entered);
+    } else {
+      this.props.addLanguage(entered);
+    }
+
     this.setState({ language: '' });
   }
 
@@ -70,7 +73,7 @@ class SettingsLanguageInput extends React.Component {
 const mapStateToProps = (state) => {
   return {
     opened: state.settings.get('opened'),
-    languagesSpoken: state.user.get('languagesSpoken').toArray(),
+    languagesSpoken: state.statistics.get('languagesSpoken').toArray(),
   };
 };
 
@@ -78,6 +81,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     close: () => dispatch(closeSettings()),
     addLanguage: (x) => dispatch(addLanguage(x)),
+    removeLanguage: (x) => dispatch(removeLanguage(x)),
     calculateStatistics: (languagesSpoken) => dispatch(calculateStatistics(languagesSpoken)),
   };
 };

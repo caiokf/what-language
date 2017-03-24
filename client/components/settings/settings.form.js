@@ -57,7 +57,7 @@ class Settings extends React.Component {
 const mapStateToProps = (state) => {
   return {
     opened: state.settings.get('opened'),
-    languagesSpoken: state.user.get('languagesSpoken'),
+    languagesSpoken: state.statistics.get('languagesSpoken'),
   };
 };
 
