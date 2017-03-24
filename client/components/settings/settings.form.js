@@ -26,13 +26,13 @@ class Settings extends React.Component {
         <SettingsLanguageInput />
         <div className="settings__related">
           <div className="settings__suggestion">
-            <h3>Languages you can speak</h3>
+            <h3> &#x21FE; Languages you can speak</h3>
             <div>
               {languageElements}
             </div>
           </div>
           <div className="settings__suggestion">
-            <h3>Needle, Where Art Thou?</h3>
+            <h3>&#x21FE; Needle, Where Art Thou?</h3>
             <p>#broken #lost #good #red #funny #lala #hilarious #catgif #blue #nono #why #yes #yesyes #aliens #green #drone</p>
           </div>
         </div>
