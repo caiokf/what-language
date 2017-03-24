@@ -1,16 +1,24 @@
-import React from "react";
-import { Col } from "react-bootstrap";
+import React from 'react';
+import { Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { openSettings } from '../../actions/settings.actions';
+import Icon from '../icons/icon';
 
-export default class Footer extends React.Component {
+class Footer extends React.Component {
   render() {
     return (
       <Col md={7}>
-        <hr></hr>
         <p>{ this.props.footerText }</p>
       </Col>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { };
+};
+
+export default connect(mapStateToProps)(Footer);
 
 Footer.propTypes = {
   footerText: React.PropTypes.string
