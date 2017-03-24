@@ -2,7 +2,7 @@ import React from 'react';
 
 import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
-import SvgIconRefs from '../components/svg-icon-refs/svg.icon.refs';
+import SvgIconRefs from '../components/icons/svg.icon.refs';
 
 import './main.layout.sass';
 
