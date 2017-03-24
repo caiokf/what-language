@@ -1,28 +1,53 @@
 import React from "react";
+import _ from 'lodash';
 
 import Datamap from '../datamap/datamap';
+import countriesData from '../../data/countries';
 
 export default class WorldMap extends React.Component {
   constructor() {
     super();
-    this.state = {
-      data: {
-        USA: { fillKey: 'canCommunicateTo', language: 'English' },
-        JPN: { fillKey: 'canCommunicateTo', language: 'Japanase' },
-        ITA: { fillKey: 'canCommunicateTo', language: 'Italian' },
-        CRI: { fillKey: 'canCommunicateTo', language: 'English' },
-        KOR: { fillKey: 'canCommunicateTo', language: 'Korean' },
-        DEU: { fillKey: 'canCommunicateTo', language: 'German' }
+
+    this.languagesSpoken = [ 'en', 'pt', 'es', 'ru' ];
+
+    this.colors = {
+      conch: 'rgba(207, 219, 213, 1)',
+      periglacialBlue: 'rgba(232, 237, 223, 1)',
+      goldYellow: 'rgba(245, 203, 92, 1)',
+      codGray: 'rgba(36, 36, 35, 1)',
+      heavyMetal: 'rgba(51, 53, 51, 1)',
+    }
+
+    this.fillState();
+  }
+
+  fillState() {
+    const world = {};
+    let howManyPeople = 0;
+    let howManyCountries = 0;
+    let totalPeople = 0;
+    let totalCountries = 0;
+
+    _.each(countriesData, country => {
+      world[country.id] = country;
+
+      if (_.intersection(this.languagesSpoken, country.languages).length > 0) {
+        world[country.id].fillKey = 'canCommunicateTo';
+        howManyPeople += country.population;
+        howManyCountries += 1;
       }
+
+      totalPeople += country.population;
+      totalCountries += 1;
+    });
+
+    this.state = {
+      data: world,
+      howManyPeople,
+      howManyCountries,
+      totalPeople,
+      totalCountries
     };
-  }
-
-  componentDidMount() {
-    this.update();
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   render() {
@@ -34,28 +59,34 @@ export default class WorldMap extends React.Component {
           geographyConfig={{
             popupOnHover: true,
             highlightOnHover: true,
-            highlightFillColor: 'rgba(51, 53, 51, 1)',
-            highlightBorderColor: 'rgba(245, 203, 92, 1)',
+            highlightFillColor: this.colors.heavyMetal,
+            highlightBorderColor: this.colors.goldYellow,
             highlightBorderWidth: 1,
-            borderWidth: 1,
-            borderOpacity: 1,
+            borderWidth: 0.25,
+            borderOpacity: 0.5,
             borderColor: 'rgba(232, 237, 223, 1)',
             popupTemplate: (geography, data) => {
               return `<div class='hoverinfo'>
-                <strong>${geography.properties.name}</strong>
+                <strong>${data.name}</strong>
                 <br>
-                Languages: ${data ? data.language : 'N/A'}`;
+                Languages: ${data.languages.join(', ')};
+                <br>
+                Population: ${data.population}`;
             }
           }}
           data={this.state.data}
           fills={{
-            defaultFill: 'rgba(36, 36, 35, 1)',
-            canCommunicateTo: 'rgba(245, 203, 92, 1)'
+            defaultFill: this.colors.codGray,
+            canCommunicateTo: this.colors.goldYellow
           }}
           projection="mercator"
           updateChoroplethOptions={{ reset: false }}
         />
         </div>
+        <h3 style={{ color: this.colors.goldYellow, textAlign: 'center' }}>
+          You can speak to: {this.state.howManyPeople} people ({ (this.state.howManyPeople/this.state.totalPeople) * 100 }%)<br />
+          in {this.state.howManyCountries} countries ({ (this.state.howManyCountries/this.state.totalCountries) * 100 }%)
+        </h3>
       </div>
     );
   }
