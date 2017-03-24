@@ -1,14 +1,13 @@
 import React from "react";
+import { connect } from 'react-redux';
 import _ from 'lodash';
-
+import { calculateStatistics } from '../../actions/statistics.actions';
 import Datamap from '../datamap/datamap';
 import countriesData from '../../data/countries';
 
-export default class WorldMap extends React.Component {
-  constructor() {
-    super();
-
-    this.languagesSpoken = [ 'en', 'pt', 'es', 'ru' ];
+class WorldMap extends React.Component {
+  componentWillMount() {
+    this.props.calculateStatistics(this.props.languagesSpoken);
 
     this.colors = {
       conch: 'rgba(207, 219, 213, 1)',
@@ -17,37 +16,6 @@ export default class WorldMap extends React.Component {
       codGray: 'rgba(36, 36, 35, 1)',
       heavyMetal: 'rgba(51, 53, 51, 1)',
     }
-
-    this.fillState();
-  }
-
-  fillState() {
-    const world = {};
-    let howManyPeople = 0;
-    let howManyCountries = 0;
-    let totalPeople = 0;
-    let totalCountries = 0;
-
-    _.each(countriesData, country => {
-      world[country.id] = country;
-
-      if (_.intersection(this.languagesSpoken, country.languages).length > 0) {
-        world[country.id].fillKey = 'canCommunicateTo';
-        howManyPeople += country.population;
-        howManyCountries += 1;
-      }
-
-      totalPeople += country.population;
-      totalCountries += 1;
-    });
-
-    this.state = {
-      data: world,
-      howManyPeople,
-      howManyCountries,
-      totalPeople,
-      totalCountries
-    };
   }
 
   render() {
@@ -74,7 +42,7 @@ export default class WorldMap extends React.Component {
                 Population: ${data.population}`;
             }
           }}
-          data={this.state.data}
+          data={this.props.mapData}
           fills={{
             defaultFill: this.colors.codGray,
             canCommunicateTo: this.colors.goldYellow
@@ -84,10 +52,29 @@ export default class WorldMap extends React.Component {
         />
         </div>
         <h3 style={{ color: this.colors.goldYellow, textAlign: 'center' }}>
-          You can speak to: {this.state.howManyPeople} people ({ (this.state.howManyPeople/this.state.totalPeople) * 100 }%)<br />
-          in {this.state.howManyCountries} countries ({ (this.state.howManyCountries/this.state.totalCountries) * 100 }%)
+          You can speak to: {this.props.howManyPeople} people ({ (this.props.howManyPeople/this.props.totalPeople) * 100 }%)<br />
+          in {this.props.howManyCountries} countries ({ (this.props.howManyCountries/this.props.totalCountries) * 100 }%)
         </h3>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    languagesSpoken: state.user.get('languagesSpoken').toArray(),
+    mapData: state.statistics.get('mapData'),
+    howManyPeople: state.statistics.getIn(['canSpeakTo', 'people']),
+    totalPeople:state.statistics.getIn(['world', 'people']),
+    howManyCountries:state.statistics.getIn(['canSpeakTo', 'countries']),
+    totalCountries: state.statistics.getIn(['world', 'countries']),
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    calculateStatistics: (languagesSpoken) => dispatch(calculateStatistics(languagesSpoken)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(WorldMap);

@@ -696,18 +696,18 @@ export default [
     population: 25408000,
     languages: [ 'ar' ] },
 
-  { id: '-99',
-    name: 'Somaliland',
-    population: 0,
-    languages: [] },
-
-  { id: '-99',
-    name: 'Kosovo',
-    population: 0,
-    languages: [] },
-
-  { id: '-99',
-    name: 'Northern Cyprus',
-    population: 0,
-    languages: [] },
+  // { id: '-99',
+  //   name: 'Somaliland',
+  //   population: 0,
+  //   languages: [] },
+  //
+  // { id: '-99',
+  //   name: 'Kosovo',
+  //   population: 0,
+  //   languages: [] },
+  //
+  // { id: '-99',
+  //   name: 'Northern Cyprus',
+  //   population: 0,
+  //   languages: [] },
 ];

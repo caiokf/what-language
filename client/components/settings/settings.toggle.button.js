@@ -4,17 +4,6 @@ import { closeSettings, openSettings } from '../../actions/settings.actions';
 import Icon from '../icons/icon';
 import './settings.toggle.button.sass';
 
-const mapStateToProps = (state) => {
-  return { opened: state.settings.get('opened') };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    close: () => dispatch(closeSettings()),
-    open: () => dispatch(openSettings()),
-  };
-};
-
 class SettingsToggleButton extends React.Component {
   render() {
     if (this.props.opened) {
@@ -32,5 +21,17 @@ class SettingsToggleButton extends React.Component {
     );
   }
 }
+
+
+const mapStateToProps = (state) => {
+  return { opened: state.settings.get('opened') };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    close: () => dispatch(closeSettings()),
+    open: () => dispatch(openSettings()),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsToggleButton);
