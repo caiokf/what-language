@@ -1,9 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import keydown from 'react-keydown';
+import { closeSettings } from '../../actions/settings.actions';
 import './settings.language.input.sass';
 
 class SettingsLanguageInput extends React.Component {
+
+  @keydown('esc')
+  escape(event) {
+    this.props.close();
+  }
+
   componentWillReceiveProps() {
      setTimeout(
        (() => { this.languageInput.focus(); }).bind(this), 500
@@ -22,6 +29,7 @@ class SettingsLanguageInput extends React.Component {
           autoCorrect="off"
           autoCapitalize="off"
           spellCheck="false"
+          onKeyDown={ this.escape }
           ref={(input) => { this.languageInput = input; }} />
         <span className="settings__info">Hit enter to settings or ESC to close</span>
       </form>
@@ -36,4 +44,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(SettingsLanguageInput);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    close: () => dispatch(closeSettings()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SettingsLanguageInput);

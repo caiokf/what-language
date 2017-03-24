@@ -1,12 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Col, Row } from 'react-bootstrap';
+import keydown from 'react-keydown';
 import Icon from '../icons/icon';
 import SettingsLanguageInput from './settings.language.input';
-import { Col, Row } from 'react-bootstrap';
+import { closeSettings } from '../../actions/settings.actions';
 
 import './settings.form.sass';
 
 class Settings extends React.Component {
+
+  @keydown('esc')
+  escape(event) {
+    this.props.close();
+  }
+
   componentClasses() {
     if (this.props.opened) {
       return 'settings settings--open';
@@ -53,4 +61,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Settings);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    close: () => dispatch(closeSettings()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);

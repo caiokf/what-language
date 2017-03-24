@@ -4,6 +4,7 @@
     "react"
   ],
   "plugins": [
+    "transform-decorators-legacy",
     "transform-async-to-generator",
     "transform-class-properties",
     "transform-object-rest-spread"
