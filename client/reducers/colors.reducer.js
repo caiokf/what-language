@@ -6,6 +6,6 @@ const colors = {
   heavyMetal: 'rgba(51, 53, 51, 1)',
 };
 
-export default function reducer(state = colors, action) {
+export default function reducer(state = colors) {
   return state;
 }

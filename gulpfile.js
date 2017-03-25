@@ -15,6 +15,9 @@ const fs = require('fs');
 const paths = {
   clientEntrypoint: './client/app.js',
   clientBundleDir: './public/dist',
+  clientJsSourceFiles: [
+    './client/**/*.js',
+  ],
   clientSourceFiles: [
     './client/**/*.js',
     './client/**/*.scss',
@@ -84,12 +87,12 @@ gulp.task('specs', () => {
     }));
 });
 
-
 gulp.task('eslint', () => {
   return gulp
-    .src(paths.serverSourceFiles)
+    .src(paths.serverSourceFiles.concat(paths.clientJsSourceFiles))
     .pipe(eslint({
-      configFile: './.eslintrc.js'
+      configFile: './.eslintrc.js',
+      fix: true
     }))
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());

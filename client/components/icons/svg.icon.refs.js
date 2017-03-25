@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router";
-import { Navbar, Nav, NavItem} from "react-bootstrap";
 
 export default class Header extends React.Component {
   render() {

@@ -17,6 +17,12 @@ class SettingsLanguageInput extends React.Component {
     };
   }
 
+  componentWillReceiveProps() {
+     setTimeout(
+       (() => { this.languageInput.focus(); }).bind(this), 500
+     );
+  }
+
   @keydown(ENTER, ESCAPE)
   handleInputKeydown(key) {
     if (key.which === ESCAPE) {
@@ -32,27 +38,21 @@ class SettingsLanguageInput extends React.Component {
 
   enterLanguage() {
     const entered = this.state.language;
-    const words = entered
+    entered
       .split(' ')
       .filter(x => !_.isEmpty(x))
       .map(x => x.toLowerCase())
       .map(x => x.trim())
-      .forEach(entered => {
-        if (entered.indexOf('-') === 0) {
-          entered = entered.slice(1, entered.length);
-          this.props.removeLanguage(entered);
+      .forEach(word => {
+        if (word.indexOf('-') === 0) {
+          word = word.slice(1, word.length);
+          this.props.removeLanguage(word);
         } else {
-          this.props.addLanguage(entered);
+          this.props.addLanguage(word);
         };
       })
 
     this.setState({ language: '' });
-  }
-
-  componentWillReceiveProps() {
-     setTimeout(
-       (() => { this.languageInput.focus(); }).bind(this), 500
-     );
   }
 
   render() {

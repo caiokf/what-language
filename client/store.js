@@ -5,22 +5,22 @@ import thunk from 'redux-thunk';
 
 import reducers from './reducers';
 
-const logger = createLogger({
+const immutableJsLogger = createLogger({
   stateTransformer: (state) => {
     let newState = {};
 
-    for (var i of Object.keys(state)) {
+    Object.keys(state).forEach((x, i) => {
       if (Immutable.Iterable.isIterable(state[i])) {
         newState[i] = state[i].toJS();
       } else {
         newState[i] = state[i];
       }
-    };
+    });
 
     return newState;
   }
 });
 
-const middleware = applyMiddleware(thunk, logger);
+const middleware = applyMiddleware(thunk, immutableJsLogger);
 
 export default createStore(reducers, middleware);

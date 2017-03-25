@@ -1,7 +1,5 @@
 import React from 'react';
-
 import Footer from '../components/footer/footer';
-import Header from '../components/header/header';
 import SvgIconRefs from '../components/icons/svg.icon.refs';
 
 import './main.layout.sass';
@@ -14,7 +12,7 @@ export default class MainLayout extends React.Component {
         <div>
           {this.props.children}
         </div>
-        <Footer footerText="This site was built with react!" />
+        <Footer footerText="Some footer" />
       </div>
     );
   }

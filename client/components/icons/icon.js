@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import './icons.sass';
 
@@ -11,7 +11,3 @@ export default class Icon extends React.Component {
     );
   }
 }
-
-Icon.propTypes = {
-  icon: React.PropTypes.string
-};

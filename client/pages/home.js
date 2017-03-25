@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { calculateStatistics } from '../actions/statistics.actions';
+import { openSettings } from '../actions/screens.actions';
 import WorldMap from '../components/world-map/world.map';
 import Settings from '../components/settings/settings.form';
 import SettingsToggleButton from '../components/settings/settings.toggle.button';
@@ -34,6 +35,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    openSettings: () => dispatch(openSettings()),
     calculateStatistics: (languagesSpoken) => dispatch(calculateStatistics(languagesSpoken)),
   };
 };

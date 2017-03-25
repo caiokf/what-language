@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import keydown from 'react-keydown';
-import Icon from '../icons/icon';
 import SettingsLanguageInput from './settings.language.input';
 import { closeSettings } from '../../actions/screens.actions';
 
@@ -11,7 +10,7 @@ import './settings.form.sass';
 class Settings extends React.Component {
 
   @keydown('esc')
-  escape(event) {
+  escape() {
     this.props.close();
   }
 

@@ -13,10 +13,20 @@ module.exports = {
     'mocha': true,
   },
   globals: {
-    expect: true
+    expect: true,
+    document: true,
   },
   rules: {
     'no-param-reassign': 'off',
-    'no-unused-expressions': 'off'
+    'no-unused-expressions': 'off',
+
+    'react/prop-types': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/prefer-stateless-function': 'off',
+    'import/prefer-default-export': 'off',
+
+    // Research what those mean
+    'react/jsx-no-bind': 'off',
+    'class-methods-use-this': 'off',
   }
 }
