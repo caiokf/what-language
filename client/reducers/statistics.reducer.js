@@ -1,9 +1,8 @@
-import { Map, List, fromJS } from 'immutable';
+import { Map, fromJS } from 'immutable';
 import _ from 'lodash';
 import countriesData from '../data/countries';
 
 const defaultStatistics = fromJS({
-  languagesSpoken: List([ 'en', 'pt', 'es' ]),
   canSpeakTo: {
     people: 0,
     countries: 0,
@@ -26,28 +25,6 @@ export default function reducer(state = defaultStatistics, action) {
 
     case 'CALCULATE_WORLD_STATISTICS': {
       return calculateWorldStatistics(state);
-    }
-
-    case 'ADD_SPOKEN_LANGUAGE': {
-      const newLanguage = action.payload;
-      const languagesSpoken = state
-        .get('languagesSpoken')
-        .push(newLanguage);
-
-      const stateWithLanguageChange = state.set('languagesSpoken', languagesSpoken);
-
-      return calculateStatistics(stateWithLanguageChange, languagesSpoken.toArray());
-    }
-
-    case 'REMOVE_SPOKEN_LANGUAGE': {
-      const languageToRemove = action.payload;
-      const languagesSpoken = state
-        .get('languagesSpoken')
-        .filter(x => x !== languageToRemove);
-
-      const stateWithLanguageChange = state.set('languagesSpoken', languagesSpoken);
-
-      return calculateStatistics(stateWithLanguageChange, languagesSpoken.toArray());
     }
 
     default:

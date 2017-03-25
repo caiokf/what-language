@@ -2,8 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import keydown, { Keys } from 'react-keydown';
-import { closeSettings } from '../../actions/settings.actions';
-import { addLanguage, removeLanguage, calculateStatistics } from '../../actions/statistics.actions';
+import { closeSettings } from '../../actions/screens.actions';
+import { addLanguage, removeLanguage } from '../../actions/options.actions';
 import './settings.language.input.sass';
 
 const { ENTER, ESCAPE } = Keys;
@@ -79,8 +79,8 @@ class SettingsLanguageInput extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    opened: state.settings.get('opened'),
-    languagesSpoken: state.statistics.get('languagesSpoken').toArray(),
+    opened: state.screens.get('settingsOpened'),
+    languagesSpoken: state.options.get('languagesSpoken').toArray(),
   };
 };
 
@@ -89,7 +89,6 @@ const mapDispatchToProps = (dispatch) => {
     close: () => dispatch(closeSettings()),
     addLanguage: (x) => dispatch(addLanguage(x)),
     removeLanguage: (x) => dispatch(removeLanguage(x)),
-    calculateStatistics: (languagesSpoken) => dispatch(calculateStatistics(languagesSpoken)),
   };
 };
 

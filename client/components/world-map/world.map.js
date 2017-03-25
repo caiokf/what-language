@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { calculateStatistics } from '../../actions/statistics.actions';
 import Datamap from '../datamap/datamap';
 
 class WorldMap extends React.Component {
@@ -51,10 +50,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    calculateStatistics: (languagesSpoken) => dispatch(calculateStatistics(languagesSpoken)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(WorldMap);
+export default connect(mapStateToProps)(WorldMap);

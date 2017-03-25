@@ -27,8 +27,8 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    settingsOpened: state.settings.get('opened'),
-    languagesSpoken: state.statistics.get('languagesSpoken').toArray(),
+    settingsOpened: state.screens.get('settingsOpened'),
+    languagesSpoken: state.options.get('languagesSpoken').toArray(),
   };
 };
 

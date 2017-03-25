@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { openSettings } from '../../actions/settings.actions';
+import { openSettings } from '../../actions/screens.actions';
 import Icon from '../icons/icon';
 
 class Footer extends React.Component {

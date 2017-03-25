@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import keydown from 'react-keydown';
 import Icon from '../icons/icon';
 import SettingsLanguageInput from './settings.language.input';
-import { closeSettings } from '../../actions/settings.actions';
+import { closeSettings } from '../../actions/screens.actions';
 
 import './settings.form.sass';
 
@@ -56,8 +56,8 @@ class Settings extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    opened: state.settings.get('opened'),
-    languagesSpoken: state.statistics.get('languagesSpoken'),
+    opened: state.screens.get('settingsOpened'),
+    languagesSpoken: state.options.get('languagesSpoken'),
   };
 };
 

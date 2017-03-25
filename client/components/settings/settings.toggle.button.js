@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { closeSettings, openSettings } from '../../actions/settings.actions';
+import { closeSettings, openSettings } from '../../actions/screens.actions';
 import Icon from '../icons/icon';
 import './settings.toggle.button.sass';
 
@@ -24,7 +24,7 @@ class SettingsToggleButton extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  return { opened: state.settings.get('opened') };
+  return { opened: state.screens.get('settingsOpened') };
 };
 
 const mapDispatchToProps = (dispatch) => {
