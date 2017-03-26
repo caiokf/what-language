@@ -10,6 +10,7 @@ const buffer = require('vinyl-buffer');
 const livereload = require('gulp-livereload');
 const mocha = require('gulp-mocha');
 const eslint = require('gulp-eslint');
+const util = require('gulp-util');
 const fs = require('fs');
 
 const paths = {
@@ -77,13 +78,13 @@ gulp.task('watch:client', ['compile:client'] , () => {
 });
 
 gulp.task('specs', () => {
-  process.env.PORT = 8001;
   return gulp
     .src(paths.specSourceFiles)
     .pipe(mocha({
       reporter: 'nyan',
       require: './specs/require.js',
-      colors: true
+      colors: true,
+      watch: !!util.env.watch
     }));
 });
 
