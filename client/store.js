@@ -9,11 +9,11 @@ const immutableJsLogger = createLogger({
   stateTransformer: (state) => {
     let newState = {};
 
-    Object.keys(state).forEach((x, i) => {
-      if (Immutable.Iterable.isIterable(state[i])) {
-        newState[i] = state[i].toJS();
+    Object.keys(state).forEach((x) => {
+      if (Immutable.Iterable.isIterable(state[x])) {
+        newState[x] = state[x].toJS();
       } else {
-        newState[i] = state[i];
+        newState[x] = state[x];
       }
     });
 

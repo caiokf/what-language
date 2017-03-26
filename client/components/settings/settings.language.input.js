@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
 import { connect } from 'react-redux';
 import keydown, { Keys } from 'react-keydown';
 import { closeSettings } from '../../actions/screens.actions';
