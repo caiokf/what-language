@@ -1,4 +1,4 @@
-# koa-react-starter
+# What Language ?
 
 A starter kit with
 * [Koa](http://koajs.com/)
