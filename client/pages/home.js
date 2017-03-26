@@ -6,6 +6,7 @@ import WorldMap from '../components/world-map/world.map';
 import Settings from '../components/settings/settings.form';
 import MenuBar from '../components/menu-bar/menu.bar';
 import Statistics from '../components/statistics/statistics';
+import './home.sass';
 
 class Home extends React.Component {
   componentWillMount() {
@@ -16,10 +17,12 @@ class Home extends React.Component {
     const statistics = this.props.settingsOpened ? null : (<Statistics />);
 
     return (
-      <div className="container">
+      <div>
         <MenuBar />
-        <WorldMap />
-        {statistics}
+        <div className={ this.props.settingsOpened ? 'home-container shrink' : 'home-container'}>
+          <WorldMap />
+          {statistics}
+        </div>
         <Settings />
       </div>
     );
