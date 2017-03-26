@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import keydown, { Keys } from 'react-keydown';
 import { closeSettings } from '../../actions/screens.actions';
-import { addLanguage, removeLanguage } from '../../actions/options.actions';
+import { handleLanguageInput } from '../../actions/options.actions';
 import './settings.language.input.sass';
 
 const { ENTER, ESCAPE } = Keys;
@@ -36,20 +36,7 @@ class SettingsLanguageInput extends React.Component {
   }
 
   enterLanguage() {
-    const entered = this.state.language;
-    entered
-      .split(' ')
-      .filter(x => !_.isEmpty(x))
-      .map(x => x.toLowerCase())
-      .map(x => x.trim())
-      .forEach(word => {
-        if (word.indexOf('-') === 0) {
-          word = word.slice(1, word.length);
-          this.props.removeLanguage(word);
-        } else {
-          this.props.addLanguage(word);
-        };
-      })
+    this.props.handleLanguageInput(this.state.language);
 
     this.setState({ language: '' });
   }
@@ -86,8 +73,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     close: () => dispatch(closeSettings()),
-    addLanguage: (x) => dispatch(addLanguage(x)),
-    removeLanguage: (x) => dispatch(removeLanguage(x)),
+    handleLanguageInput: (x) => dispatch(handleLanguageInput(x)),
   };
 };
 
