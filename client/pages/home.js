@@ -4,7 +4,7 @@ import { calculateStatistics } from '../actions/statistics.actions';
 import { openSettings } from '../actions/screens.actions';
 import WorldMap from '../components/world-map/world.map';
 import Settings from '../components/settings/settings.form';
-import SettingsToggleButton from '../components/settings/settings.toggle.button';
+import MenuBar from '../components/menu-bar/menu.bar';
 import Statistics from '../components/statistics/statistics';
 
 class Home extends React.Component {
@@ -17,7 +17,7 @@ class Home extends React.Component {
 
     return (
       <div className="container">
-        <SettingsToggleButton />
+        <MenuBar />
         <WorldMap />
         {statistics}
         <Settings />

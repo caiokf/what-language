@@ -1,6 +1,7 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
 import { connect } from 'react-redux';
+import Icon from '../icons/icon';
 import './statistics.sass';
 
 class Statistics extends React.Component {
@@ -9,34 +10,53 @@ class Statistics extends React.Component {
     const countriesPercentage = (this.props.howManyCountries/this.props.totalCountries) * 100
     return (
       <div className="statistics">
-        <h3>
-          <span>You can speak to: </span>
-          <NumberFormat
-            value={this.props.howManyPeople}
-            displayType={'text'}
-            thousandSeparator={true} />
-          <span> people (</span>
-          <NumberFormat
-            value={peoplePercentage}
-            displayType={'text'}
-            decimalPrecision={2}
-            suffix={'%'} />
-          <span>)</span>
-          <br />
+        <div className="statistics__item-container centered col-xs-12 col-sm-6"
+          style={{
+            backgroundColor: "var(--bg-color1)",
+            flex: 1,
+            flexDirection: "column"
+          }}>
+          <div>
+            <Icon icon="chat" style={{ flex: 1 }}/>
+            <NumberFormat className="main-value"
+              value={this.props.howManyPeople}
+              displayType={'text'}
+              thousandSeparator={true} />
+          </div>
+          <div>
+            <span> people you can speak to (</span>
+            <NumberFormat
+              value={peoplePercentage}
+              displayType={'text'}
+              decimalPrecision={2}
+              suffix={'%'} />
+            <span>)</span>
+          </div>
+        </div>
 
-          <span>in </span>
-          <NumberFormat
-            value={this.props.howManyCountries}
-            displayType={'text'}
-            thousandSeparator={true} />
-          <span> countries (</span>
-          <NumberFormat
-            value={countriesPercentage}
-            displayType={'text'}
-            decimalPrecision={2}
-            suffix={'%'} />
-          <span>)</span>
-        </h3>
+        <div className="statistics__item-container centered col-xs-12 col-sm-6"
+          style={{
+            backgroundColor: "var(--bg-color2)",
+            flex: 1,
+            flexDirection: "column"
+          }}>
+          <div>
+            <Icon icon="location" style={{ flex: 1 }}/>
+            <NumberFormat className="main-value"
+              value={this.props.howManyCountries}
+              displayType={'text'}
+              thousandSeparator={true} />
+          </div>
+          <div>
+            <span> countries (</span>
+            <NumberFormat
+              value={countriesPercentage}
+              displayType={'text'}
+              decimalPrecision={2}
+              suffix={'%'} />
+            <span>)</span>
+          </div>
+        </div>
       </div>
     );
   }

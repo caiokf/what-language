@@ -1,5 +1,34 @@
 @import '../../styles/index.sass'
 
 .statistics
+  --bg-color1: $cod-gray
+  --bg-color2: lighten($cod-gray, 5%)
+  --bg-color3: lighten($cod-gray, 10%)
+  --bg-color4: lighten($cod-gray, 15%)
+
   text-align: center
+  background-color: var(--bg-color1)
   color: $gold-yellow
+  margin-top: 2rem
+  width: 100vw
+  left: 0
+  bottom: 0
+  position: fixed
+
+  &__item-container
+    flex: 1
+    display: flex
+    text-align: center
+    justify-content: center
+    height: 150px
+    max-height: 20%
+
+  .main-value
+    font-size: 2em
+    line-height: 2em
+    vertical-align: bottom
+
+  .icon
+    font-size: 2em
+    display: inline-block
+    margin: 0.5rem 1rem 0 0

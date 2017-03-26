@@ -1,0 +1,29 @@
+@import '../../styles/index.sass'
+
+.menu-bar
+  display: block
+  position: absolute
+  left: 2rem
+  top: 2rem
+  padding: 1rem
+  background-color: $cod-gray
+  border-radius: 45px
+  z-index: 2000
+  width: 76px
+  text-align: center
+  align-content: center
+
+  .menu-bar-button
+    font-size: 3rem
+    display: block
+    cursor: pointer
+    border: none
+    background: none
+    text-decoration: none
+    outline: none
+
+    &:not(:first-child)
+      margin-top: 20px
+
+    &:focus
+      outline: none
