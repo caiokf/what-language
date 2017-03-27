@@ -78,10 +78,11 @@ gulp.task('watch:client', ['compile:client'] , () => {
 });
 
 gulp.task('specs', () => {
+  const reporter = util.env.reporter || 'nyan';
   return gulp
     .src(paths.specSourceFiles)
     .pipe(mocha({
-      reporter: 'nyan',
+      reporter: reporter,
       require: './specs/require.js',
       colors: true,
       watch: !!util.env.watch
