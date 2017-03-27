@@ -47,22 +47,22 @@ gulp.task('compile:server', () => {
     .pipe(gulp.dest(paths.serverBuildDir))
 });
 
-gulp.task('watch:server', ['compile:server'] , () => {
+gulp.task('watch:server' , () => {
   nodemon({
-    script: './dist/server.js',
+    script: 'dist/server.js',
     ext: 'js',
     watch: paths.serverSourceFiles,
-    tasks: ['compile']
+    tasks: ['compile:server']
   });
 });
 
 gulp.task('compile:client', () => {
-  browserify(paths.clientEntrypoint)
+  return browserify(paths.clientEntrypoint)
     .transform('babelify')
     .transform(sassify, {
-      'auto-inject': true, // Inject css directly in the code
-      base64Encode: false, // Use base64 to inject css
-      sourceMap: false // Add source map to the code
+      'auto-inject': true,
+      base64Encode: false,
+      sourceMap: false
     })
     .bundle()
     .on('error', console.error.bind(console))
@@ -100,10 +100,12 @@ gulp.task('eslint', () => {
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('serve', ['watch:client', 'watch:server']);
+gulp.task('watch', ['watch:client', 'watch:server']);
 
 gulp.task('commit', ['eslint', 'specs']);
 
 gulp.task('build', ['compile:client', 'compile:server']);
 
-gulp.task('default', ['serve']);
+gulp.task('serve', ['watch:server']);
+
+gulp.task('default', ['watch']);
