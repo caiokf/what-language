@@ -1,8 +1,5 @@
 # What Language ?
-
-https://codeship.com/projects/YOUR_PROJECT_UUID/status?branch=master
-
-This kit was inspired by [Koa-React-Starter](https://github.com/cynical89/koa-react-starter)
+![codeship status](https://codeship.com/projects/2d4ca8b0-f4e6-0134-aab4-4e76bd6b2464/status?branch=master)
 
 
 ## Installation
