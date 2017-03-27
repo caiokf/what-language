@@ -15,7 +15,7 @@ const fs = require('fs');
 
 const paths = {
   clientEntrypoint: './client/app.js',
-  clientBundleDir: './public/dist',
+  clientBundleDir: './public',
   clientJsSourceFiles: [
     './client/**/*.js',
   ],
