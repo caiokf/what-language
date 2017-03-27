@@ -12,7 +12,7 @@
   "license": "ISC",
   "homepage": "https://github.com/caiokf/koa-react-starter#readme",
   "scripts": {
-    "start": "gulp",
+    "start": "gulp compile",
     "test": "mocha ./server/tests/ && ./node_modules/.bin/eslint .",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha ./server/tests/"
   },
@@ -50,9 +50,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.10.2",
     "redux-thunk": "^2.2.0",
-    "topojson": "^2.2.0"
-  },
-  "devDependencies": {
+    "topojson": "^2.2.0",
     "babel-eslint": "^7.2.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
@@ -86,5 +84,7 @@
     "sassify": "^2.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {
   }
 }
