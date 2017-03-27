@@ -104,4 +104,6 @@ gulp.task('serve', ['watch:client', 'watch:server']);
 
 gulp.task('commit', ['eslint', 'specs']);
 
+gulp.task('build', ['compile:client', 'compile:server']);
+
 gulp.task('default', ['serve']);
