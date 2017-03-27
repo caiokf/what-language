@@ -1,13 +1,6 @@
 # What Language ?
 
-A starter kit with
-* [Koa](http://koajs.com/)
-* [React](https://facebook.github.io/react/)
-* [Redux](https://github.com/reactjs/redux)
-* [Eslint](http://eslint.org/) and airbnb defaults
-* [Mocha](https://mochajs.org/)
-* [Gulp](http://gulpjs.com/)
-
+https://codeship.com/projects/YOUR_PROJECT_UUID/status?branch=master
 
 This kit was inspired by [Koa-React-Starter](https://github.com/cynical89/koa-react-starter)
 
