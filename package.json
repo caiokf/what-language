@@ -57,6 +57,7 @@
     "gulp-mocha": "^4.1.0",
     "gulp-nodemon": "^2.2.1",
     "gulp-notify": "^3.0.0",
+    "gulp-sequence": "^0.4.6",
     "gulp-util": "^3.0.8",
     "immutable": "^3.8.1",
     "istanbul": "^0.4.5",

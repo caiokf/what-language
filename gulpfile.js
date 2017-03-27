@@ -11,6 +11,7 @@ const livereload = require('gulp-livereload');
 const mocha = require('gulp-mocha');
 const eslint = require('gulp-eslint');
 const util = require('gulp-util');
+const sequence = require('gulp-sequence');
 const fs = require('fs');
 
 const paths = {
@@ -106,6 +107,6 @@ gulp.task('commit', ['eslint', 'specs']);
 
 gulp.task('build', ['compile:client', 'compile:server']);
 
-gulp.task('serve', ['watch:server']);
+gulp.task('serve', sequence('compile:server', 'watch:server'));
 
 gulp.task('default', ['watch']);
