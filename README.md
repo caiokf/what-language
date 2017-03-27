@@ -4,23 +4,17 @@
 
 ## Installation
 
-* Install packages
+`cp ./pre-commit .git/hooks/pre-commit`
+
+`chmod +x .git/hooks/pre-commit`
 
 `npm install`
 
-*To be sure* you are running your unit tests, code styling, etc. before committing your changes, copy ./scripts/pre-commit to .git/hooks/pre-commit with the command `cp ./pre-commit .git/hooks/pre-commit`
-
-In order to the git hook to execute, you might need to run `chmod +x .git/hooks/pre-commit`
-
-And to run the server
 `gulp`
 
 Front-end server will be available at: http://localhost:5000/
 
-* Enjoy!
-
-
-# Running Tests and ESLint
+## Running Tests and ESLint
 
 To run the unit tests: `gulp specs`
 
