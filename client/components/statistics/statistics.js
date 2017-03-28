@@ -10,7 +10,7 @@ class Statistics extends React.Component {
     const countriesPercentage = (this.props.howManyCountries/this.props.totalCountries) * 100
     return (
       <div className="statistics">
-        <div className="statistics__item-container centered col-xs-12 col-sm-6"
+        <div className="statistics__item-container centered col-xs-12 col-md-6"
           style={{
             backgroundColor: "var(--bg-color1)",
             flex: 1,
@@ -34,7 +34,7 @@ class Statistics extends React.Component {
           </div>
         </div>
 
-        <div className="statistics__item-container centered col-xs-12 col-sm-6"
+        <div className="statistics__item-container centered col-xs-12 col-md-6"
           style={{
             backgroundColor: "var(--bg-color2)",
             flex: 1,

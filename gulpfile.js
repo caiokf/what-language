@@ -58,7 +58,7 @@ gulp.task('watch:server' , () => {
 });
 
 gulp.task('compile:client', () => {
-  return browserify(paths.clientEntrypoint)
+  browserify(paths.clientEntrypoint)
     .transform('babelify')
     .transform(sassify, {
       'auto-inject': true,
