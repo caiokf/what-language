@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 import _ from 'lodash';
-import countriesData from '../data/countries';
+import countriesJson from '../data/countries';
 
 const defaultStatistics = fromJS({
   canSpeakTo: {
@@ -14,12 +14,14 @@ const defaultStatistics = fromJS({
     languages: 0,
   },
   mapData: {},
+  countriesData: countriesJson,
 });
 
 export default function reducer(state = defaultStatistics, action) {
   switch (action.type) {
 
     case 'CALCULATE_STATISTICS': {
+      const countriesData = state.get('countriesData').toJS();
       const world = {};
       const languagesSpoken = action.payload;
       let people = 0;
@@ -29,8 +31,14 @@ export default function reducer(state = defaultStatistics, action) {
       _.each(countriesData, country => {
         world[country.id] = country;
 
+        country.unofficialLanguages = country.unofficialLanguages || [];
+
         if (_.intersection(languagesSpoken, country.languages).length > 0) {
           world[country.id].fillKey = 'canCommunicateTo';
+          people += country.population;
+          countries += 1;
+        } else if (_.intersection(languagesSpoken, country.unofficialLanguages).length > 0) {
+          world[country.id].fillKey = 'canCommunicateToUnofficially';
           people += country.population;
           countries += 1;
         } else {
@@ -47,6 +55,7 @@ export default function reducer(state = defaultStatistics, action) {
 
     case 'CALCULATE_WORLD_STATISTICS':
     default: {
+      const countriesData = state.get('countriesData').toJS();
       let people = _.sumBy(countriesData, x => x.population);
       let countries = _.size(countriesData);
       let languages = _

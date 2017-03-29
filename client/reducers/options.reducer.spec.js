@@ -101,5 +101,5 @@ describe('options reducer', () => {
       expect(languages(['en'], '- - - - ')).to.deep.equal(['en']);
       expect(languages(['en'], '@#$%ˆ&')).to.deep.equal(['en']);
     });
-  })
+  });
 });

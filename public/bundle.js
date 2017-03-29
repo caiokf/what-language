@@ -1354,7 +1354,8 @@ var WorldMap = function (_React$Component) {
             updateChoroplethOptions: { reset: false },
             fills: {
               defaultFill: this.props.colors.codGray,
-              canCommunicateTo: this.props.colors.goldYellow
+              canCommunicateTo: this.props.colors.goldYellow,
+              canCommunicateToUnofficially: this.props.colors.tacao
             },
             geographyConfig: {
               popupOnHover: true,
@@ -1394,7 +1395,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = [{ id: 'AFG',
   name: 'Afghanistan',
   population: 33256755,
-  languages: ['ps', 'uz', 'tk'] }, { id: 'AGO',
+  languages: ['ps', 'uz', 'tk']
+}, { id: 'AGO',
   name: 'Angola',
   population: 24041303,
   languages: ['pt'] }, { id: 'ALB',
@@ -1424,7 +1426,8 @@ exports.default = [{ id: 'AFG',
   languages: ['fr', 'rn'] }, { id: 'BEL',
   name: 'Belgium',
   population: 11249025,
-  languages: ['nl', 'fr', 'de'] }, { id: 'BEN',
+  languages: ['nl', 'fr', 'de'],
+  unofficialLanguages: ['en'] }, { id: 'BEN',
   name: 'Benin',
   population: 11374770,
   languages: ['fr'] }, { id: 'BFA',
@@ -1520,7 +1523,8 @@ exports.default = [{ id: 'AFG',
   languages: ['es', 'eu', 'ca', 'gl', 'oc'] }, { id: 'EST',
   name: 'Estonia',
   population: 1273786,
-  languages: ['et'] }, { id: 'ETH',
+  languages: ['et'],
+  unofficialLanguages: ['en'] }, { id: 'ETH',
   name: 'Ethiopia',
   population: 103220091,
   languages: ['am'] }, { id: 'FIN',
@@ -1634,7 +1638,8 @@ exports.default = [{ id: 'AFG',
   languages: ['en', 'st'] }, { id: 'LTU',
   name: 'Lithuania',
   population: 2979785,
-  languages: ['lt'] }, { id: 'LUX',
+  languages: ['lt'],
+  unofficialLanguages: ['en'] }, { id: 'LUX',
   name: 'Luxembourg',
   population: 554804,
   languages: ['fr', 'de', 'lb'] }, { id: 'LVA',
@@ -1877,7 +1882,8 @@ exports.default = [{ id: 'AFG',
   languages: ['mk'] }, { id: 'NLD',
   name: 'Netherlands',
   population: 17100475,
-  languages: ['nl'] }, { id: 'PRK',
+  languages: ['nl'],
+  unofficialLanguages: ['en'] }, { id: 'PRK',
   name: 'North Korea',
   population: 24895000,
   languages: ['ko'] }, { id: 'RUS',
@@ -4695,7 +4701,8 @@ var colors = {
   periglacialBlue: 'rgba(232, 237, 223, 1)',
   goldYellow: 'rgba(245, 203, 92, 1)',
   codGray: 'rgba(36, 36, 35, 1)',
-  heavyMetal: 'rgba(51, 53, 51, 1)'
+  heavyMetal: 'rgba(51, 53, 51, 1)',
+  tacao: 'rgba(234, 186, 130, 1)'
 };
 
 function reducer() {
@@ -4899,7 +4906,8 @@ var defaultStatistics = (0, _immutable.fromJS)({
     countries: 0,
     languages: 0
   },
-  mapData: {}
+  mapData: {},
+  countriesData: _countries3.default
 });
 
 function reducer() {
@@ -4910,17 +4918,24 @@ function reducer() {
 
     case 'CALCULATE_STATISTICS':
       {
+        var countriesData = state.get('countriesData').toJS();
         var world = {};
         var languagesSpoken = action.payload;
         var people = 0;
         var countries = 0;
         var languages = languagesSpoken.length;
 
-        _lodash2.default.each(_countries3.default, function (country) {
+        _lodash2.default.each(countriesData, function (country) {
           world[country.id] = country;
+
+          country.unofficialLanguages = country.unofficialLanguages || [];
 
           if (_lodash2.default.intersection(languagesSpoken, country.languages).length > 0) {
             world[country.id].fillKey = 'canCommunicateTo';
+            people += country.population;
+            countries += 1;
+          } else if (_lodash2.default.intersection(languagesSpoken, country.unofficialLanguages).length > 0) {
+            world[country.id].fillKey = 'canCommunicateToUnofficially';
             people += country.population;
             countries += 1;
           } else {
@@ -4934,11 +4949,12 @@ function reducer() {
     case 'CALCULATE_WORLD_STATISTICS':
     default:
       {
-        var _people = _lodash2.default.sumBy(_countries3.default, function (x) {
+        var _countriesData = state.get('countriesData').toJS();
+        var _people = _lodash2.default.sumBy(_countriesData, function (x) {
           return x.population;
         });
-        var _countries = _lodash2.default.size(_countries3.default);
-        var _languages = _lodash2.default.chain(_countries3.default).flatMap(function (x) {
+        var _countries = _lodash2.default.size(_countriesData);
+        var _languages = _lodash2.default.chain(_countriesData).flatMap(function (x) {
           return x.languages;
         }).uniq().size().value();
 

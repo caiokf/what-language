@@ -23,7 +23,8 @@ class WorldMap extends React.Component {
             updateChoroplethOptions={{ reset: false }}
             fills={{
               defaultFill: this.props.colors.codGray,
-              canCommunicateTo: this.props.colors.goldYellow
+              canCommunicateTo: this.props.colors.goldYellow,
+              canCommunicateToUnofficially: this.props.colors.tacao
             }}
             geographyConfig={{
               popupOnHover: true,
