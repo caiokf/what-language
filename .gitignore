@@ -10,7 +10,7 @@ coverage
 build/Release
 node_modules
 tmp
-/public/assets/js/bundle.js
+public/bundle.js
 .DS_Store
 .gulp-cache
 dist/

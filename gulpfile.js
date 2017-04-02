@@ -1,10 +1,9 @@
+const fs = require('fs');
 const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
 const notify = require('gulp-notify');
-const babelify = require('babelify');
 const babel = require('gulp-babel');
-const browserify = require('browserify');
-const sassify = require('sassify');
+const sourcemaps = require('gulp-sourcemaps');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const livereload = require('gulp-livereload');
@@ -12,7 +11,6 @@ const mocha = require('gulp-mocha');
 const eslint = require('gulp-eslint');
 const util = require('gulp-util');
 const sequence = require('gulp-sequence');
-const fs = require('fs');
 
 const paths = {
   clientEntrypoint: './client/app.js',
@@ -57,24 +55,15 @@ gulp.task('watch:server' , () => {
   });
 });
 
-gulp.task('compile:client', () => {
-  browserify(paths.clientEntrypoint)
-    .transform('babelify')
-    .transform(sassify, {
-      'auto-inject': true,
-      base64Encode: false,
-      sourceMap: false
-    })
-    .bundle()
-    .on('error', console.error.bind(console))
-    .pipe(source('bundle.js'))
-    .pipe(buffer())
-    .pipe(gulp.dest(paths.clientBundleDir))
-    .pipe(livereload());
+gulp.task('compile:client', (done) => {
+  const webpack = require('webpack');
+  const webpackConfig = require('./webpack.config.js');
+
+  return webpack(webpackConfig())
+    .run(done);
 });
 
 gulp.task('watch:client', ['compile:client'] , () => {
-  livereload.listen();
   gulp.watch(paths.clientSourceFiles , ['compile:client']);
 });
 
