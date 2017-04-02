@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start": "gulp serve",
+    "postinstall": "gulp compile:client",
     "test": "gulp specs --reporter spec"
   },
   "repository": {
