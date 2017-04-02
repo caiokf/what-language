@@ -47135,15 +47135,10 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, ".github-corner__github-icon___XQcjg {\n  color: #242423;\n  fill: #f5cb5c;\n  position: absolute;\n  top: 0;\n  border: 0;\n  right: 0;\n  z-index: 100; }\n\n.github-corner__github-corner___2bKDZ:hover .github-corner__octo-arm___2xfNl {\n  transform-origin: 130px 106px;\n  animation: github-corner__octocat-wave___utB9Z 560ms ease-in-out; }\n\n@keyframes github-corner__octocat-wave___utB9Z {\n  0%, 100% {\n    transform: rotate(0); }\n  20%, 60% {\n    transform: rotate(-25deg); }\n  40%, 80% {\n    transform: rotate(10deg); } }\n", ""]);
+exports.push([module.i, ".github-icon {\n  color: #242423;\n  fill: #f5cb5c;\n  position: absolute;\n  top: 0;\n  border: 0;\n  right: 0;\n  z-index: 100; }\n\n.github-corner:hover .octo-arm {\n  transform-origin: 130px 106px;\n  animation: octocat-wave 560ms ease-in-out; }\n\n@keyframes octocat-wave {\n  0%, 100% {\n    transform: rotate(0); }\n  20%, 60% {\n    transform: rotate(-25deg); }\n  40%, 80% {\n    transform: rotate(10deg); } }\n", ""]);
 
 // exports
-exports.locals = {
-	"github-icon": "github-corner__github-icon___XQcjg",
-	"github-corner": "github-corner__github-corner___2bKDZ",
-	"octo-arm": "github-corner__octo-arm___2xfNl",
-	"octocat-wave": "github-corner__octocat-wave___utB9Z"
-};
+
 
 /***/ }),
 /* 311 */
@@ -47154,16 +47149,10 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, ".icons__hidden___DbyYw {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.icons__centered___2E0Kd {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.icons__text-right___2E6vS {\n  text-align: right; }\n\n.icons__text-left___1YJmA {\n  text-align: left; }\n\n.icons__icon___IU8bt {\n  display: block;\n  width: 1.5em;\n  height: 1.5em;\n  margin: 0 auto;\n  fill: #f5cb5c; }\n", ""]);
+exports.push([module.i, ".hidden {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.centered {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.text-right {\n  text-align: right; }\n\n.text-left {\n  text-align: left; }\n\n.icon {\n  display: block;\n  width: 1.5em;\n  height: 1.5em;\n  margin: 0 auto;\n  fill: #f5cb5c; }\n", ""]);
 
 // exports
-exports.locals = {
-	"hidden": "icons__hidden___DbyYw",
-	"centered": "icons__centered___2E0Kd",
-	"text-right": "icons__text-right___2E6vS",
-	"text-left": "icons__text-left___1YJmA",
-	"icon": "icons__icon___IU8bt"
-};
+
 
 /***/ }),
 /* 312 */
@@ -47174,18 +47163,10 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, ".menu-bar__hidden___3Bl_d {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.menu-bar__centered___19v4Y {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.menu-bar__text-right___2L-Td {\n  text-align: right; }\n\n.menu-bar__text-left___3aCYP {\n  text-align: left; }\n\n.menu-bar__menu-bar___1jSdq {\n  display: block;\n  position: absolute;\n  left: 2rem;\n  top: 2rem;\n  padding: 1rem;\n  background-color: #242423;\n  border-radius: 45px;\n  z-index: 2000;\n  width: 76px;\n  text-align: center;\n  align-content: center; }\n  .menu-bar__menu-bar___1jSdq .menu-bar__menu-bar-button___NQnKj {\n    font-size: 3rem;\n    display: block;\n    cursor: pointer;\n    border: none;\n    background: none;\n    text-decoration: none;\n    outline: none; }\n    .menu-bar__menu-bar___1jSdq .menu-bar__menu-bar-button___NQnKj:not(:first-child) {\n      margin-top: 2rem; }\n    .menu-bar__menu-bar___1jSdq .menu-bar__menu-bar-button___NQnKj:focus {\n      outline: none; }\n    .menu-bar__menu-bar___1jSdq .menu-bar__menu-bar-button___NQnKj:hover .menu-bar__icon___1uLt5 {\n      fill: #fbeabc; }\n", ""]);
+exports.push([module.i, ".hidden {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.centered {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.text-right {\n  text-align: right; }\n\n.text-left {\n  text-align: left; }\n\n.menu-bar {\n  display: block;\n  position: absolute;\n  left: 2rem;\n  top: 2rem;\n  padding: 1rem;\n  background-color: #242423;\n  border-radius: 45px;\n  z-index: 2000;\n  width: 76px;\n  text-align: center;\n  align-content: center; }\n  .menu-bar .menu-bar-button {\n    font-size: 3rem;\n    display: block;\n    cursor: pointer;\n    border: none;\n    background: none;\n    text-decoration: none;\n    outline: none; }\n    .menu-bar .menu-bar-button:not(:first-child) {\n      margin-top: 2rem; }\n    .menu-bar .menu-bar-button:focus {\n      outline: none; }\n    .menu-bar .menu-bar-button:hover .icon {\n      fill: #fbeabc; }\n", ""]);
 
 // exports
-exports.locals = {
-	"hidden": "menu-bar__hidden___3Bl_d",
-	"centered": "menu-bar__centered___19v4Y",
-	"text-right": "menu-bar__text-right___2L-Td",
-	"text-left": "menu-bar__text-left___3aCYP",
-	"menu-bar": "menu-bar__menu-bar___1jSdq",
-	"menu-bar-button": "menu-bar__menu-bar-button___NQnKj",
-	"icon": "menu-bar__icon___1uLt5"
-};
+
 
 /***/ }),
 /* 313 */
@@ -47196,12 +47177,10 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, ".settings-button__button-close-settings___1jR8V {\n  opacity: 1; }\n", ""]);
+exports.push([module.i, ".button-close-settings {\n  opacity: 1; }\n", ""]);
 
 // exports
-exports.locals = {
-	"button-close-settings": "settings-button__button-close-settings___1jR8V"
-};
+
 
 /***/ }),
 /* 314 */
@@ -47212,22 +47191,10 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, ".settings-form__settings--open___2sn0I .settings-form__settings__controls-panel___3hMlK,\n.settings-form__settings--open___2sn0I .settings-form__settings__info___1EM9T {\n  opacity: 1;\n  transform: translate3d(0, 0, 0); }\n\n.settings-form__settings__controls-panel___3hMlK,\n.settings-form__settings__info___1EM9T {\n  opacity: 0;\n  transform: translate3d(0, 50px, 0);\n  transition: opacity 0.4s, transform 0.4s; }\n\n.settings-form__settings___2IQR5, .settings-form__settings___2IQR5::before {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 100%;\n  height: 100vh; }\n\n.settings-form__hidden___Xy9rN {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.settings-form__centered___2hCpk {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.settings-form__text-right___1TTUq {\n  text-align: right; }\n\n.settings-form__text-left___1ARaA {\n  text-align: left; }\n\n.settings-form__settings___2IQR5 {\n  display: flex;\n  flex-direction: column;\n  z-index: 1000;\n  position: fixed;\n  pointer-events: none; }\n  .settings-form__settings___2IQR5::before {\n    content: '';\n    background: rgba(0, 0, 0, 0.8); }\n  .settings-form__settings--open___2sn0I {\n    pointer-events: auto; }\n\n.settings-form__settings__controls___TANxD {\n  display: flex;\n  width: 75%;\n  text-align: left;\n  pointer-events: none;\n  color: #cfdbd5; }\n\n.settings-form__settings__controls-panel___3hMlK h3 {\n  font-size: 1.35em;\n  margin: 0 0 1rem 0; }\n\n.settings-form__settings__controls-panel___3hMlK .settings-form__contents___10ZEQ {\n  overflow-wrap: break-word;\n  font-size: 1.15em;\n  line-height: 1.4;\n  margin: 0; }\n\n.settings-form__language___Gxeri {\n  margin-right: 1rem; }\n\n.settings-form__settings___2IQR5::before {\n  opacity: 0;\n  transition: opacity 0.5s; }\n\n.settings-form__settings--open___2sn0I::before {\n  opacity: 1; }\n", ""]);
+exports.push([module.i, ".settings--open .settings__controls-panel,\n.settings--open .settings__info {\n  opacity: 1;\n  transform: translate3d(0, 0, 0); }\n\n.settings__controls-panel,\n.settings__info {\n  opacity: 0;\n  transform: translate3d(0, 50px, 0);\n  transition: opacity 0.4s, transform 0.4s; }\n\n.settings, .settings::before {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 100%;\n  height: 100vh; }\n\n.hidden {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.centered {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.text-right {\n  text-align: right; }\n\n.text-left {\n  text-align: left; }\n\n.settings {\n  display: flex;\n  flex-direction: column;\n  z-index: 1000;\n  position: fixed;\n  pointer-events: none; }\n  .settings::before {\n    content: '';\n    background: rgba(0, 0, 0, 0.8); }\n  .settings--open {\n    pointer-events: auto; }\n\n.settings__controls {\n  display: flex;\n  width: 75%;\n  text-align: left;\n  pointer-events: none;\n  color: #cfdbd5; }\n\n.settings__controls-panel h3 {\n  font-size: 1.35em;\n  margin: 0 0 1rem 0; }\n\n.settings__controls-panel .contents {\n  overflow-wrap: break-word;\n  font-size: 1.15em;\n  line-height: 1.4;\n  margin: 0; }\n\n.language {\n  margin-right: 1rem; }\n\n.settings::before {\n  opacity: 0;\n  transition: opacity 0.5s; }\n\n.settings--open::before {\n  opacity: 1; }\n", ""]);
 
 // exports
-exports.locals = {
-	"settings--open": "settings-form__settings--open___2sn0I",
-	"settings__controls-panel": "settings-form__settings__controls-panel___3hMlK",
-	"settings__info": "settings-form__settings__info___1EM9T",
-	"settings": "settings-form__settings___2IQR5",
-	"hidden": "settings-form__hidden___Xy9rN",
-	"centered": "settings-form__centered___2hCpk",
-	"text-right": "settings-form__text-right___1TTUq",
-	"text-left": "settings-form__text-left___1ARaA",
-	"settings__controls": "settings-form__settings__controls___TANxD",
-	"contents": "settings-form__contents___10ZEQ",
-	"language": "settings-form__language___Gxeri"
-};
+
 
 /***/ }),
 /* 315 */
@@ -47238,20 +47205,10 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, ".settings-language-input__settings__input___3oXxV {\n  border: 0;\n  background: transparent;\n  border-radius: 0;\n  -webkit-appearance: none;\n  box-sizing: border-box; }\n  .settings-language-input__settings__input___3oXxV:focus {\n    outline: none; }\n  .settings-language-input__settings__input___3oXxV::-webkit-settings-cancel-button, .settings-language-input__settings__input___3oXxV::-webkit-settings-decoration {\n    -webkit-appearance: none; }\n  .settings-language-input__settings__input___3oXxV::-ms-clear {\n    display: none; }\n\n.settings-language-input__hidden___3udBD {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.settings-language-input__centered___2mWoE {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.settings-language-input__text-right___3fCDq {\n  text-align: right; }\n\n.settings-language-input__text-left___1THuP {\n  text-align: left; }\n\n.settings-language-input__settings__input___3oXxV {\n  display: inline-block;\n  padding: 0.05em 0;\n  width: 75%;\n  border-bottom: 5px solid;\n  font-size: 10vw;\n  line-height: 1;\n  color: #eaba82;\n  transform: scale3d(0, 1, 1);\n  transform-origin: 0% 50%;\n  transition: transform 0.3s; }\n  .settings-language-input__settings__input___3oXxV::-webkit-input-placeholder, .settings-language-input__settings__input___3oXxV:-ms-input-placeholder {\n    color: #e8eddf; }\n  .settings-language-input__settings__input___3oXxV::-moz-placeholder {\n    opacity: 1;\n    color: #e8eddf; }\n\n.settings-language-input__settings--open___1IB6K .settings-language-input__settings__input___3oXxV {\n  transform: scale3d(1, 1, 1);\n  transition-duration: 0.5s; }\n\n.settings-language-input__settings__language-input-form___3ros6 {\n  margin: 5em 0; }\n\n.settings-language-input__settings__info___B4yyo {\n  display: block;\n  margin: 0 auto;\n  padding: 0.5rem 0;\n  width: 75%;\n  font-size: 90%;\n  font-weight: bold;\n  color: #eaba82; }\n\n.settings-language-input__settings__label___1cdMl {\n  font-size: 2rem; }\n", ""]);
+exports.push([module.i, ".settings__input {\n  border: 0;\n  background: transparent;\n  border-radius: 0;\n  -webkit-appearance: none;\n  box-sizing: border-box; }\n  .settings__input:focus {\n    outline: none; }\n  .settings__input::-webkit-settings-cancel-button, .settings__input::-webkit-settings-decoration {\n    -webkit-appearance: none; }\n  .settings__input::-ms-clear {\n    display: none; }\n\n.hidden {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.centered {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.text-right {\n  text-align: right; }\n\n.text-left {\n  text-align: left; }\n\n.settings__input {\n  display: inline-block;\n  padding: 0.05em 0;\n  width: 75%;\n  border-bottom: 5px solid;\n  font-size: 10vw;\n  line-height: 1;\n  color: #eaba82;\n  transform: scale3d(0, 1, 1);\n  transform-origin: 0% 50%;\n  transition: transform 0.3s; }\n  .settings__input::-webkit-input-placeholder, .settings__input:-ms-input-placeholder {\n    color: #e8eddf; }\n  .settings__input::-moz-placeholder {\n    opacity: 1;\n    color: #e8eddf; }\n\n.settings--open .settings__input {\n  transform: scale3d(1, 1, 1);\n  transition-duration: 0.5s; }\n\n.settings__language-input-form {\n  margin: 5em 0; }\n\n.settings__info {\n  display: block;\n  margin: 0 auto;\n  padding: 0.5rem 0;\n  width: 75%;\n  font-size: 90%;\n  font-weight: bold;\n  color: #eaba82; }\n\n.settings__label {\n  font-size: 2rem; }\n", ""]);
 
 // exports
-exports.locals = {
-	"settings__input": "settings-language-input__settings__input___3oXxV",
-	"hidden": "settings-language-input__hidden___3udBD",
-	"centered": "settings-language-input__centered___2mWoE",
-	"text-right": "settings-language-input__text-right___3fCDq",
-	"text-left": "settings-language-input__text-left___1THuP",
-	"settings--open": "settings-language-input__settings--open___1IB6K",
-	"settings__language-input-form": "settings-language-input__settings__language-input-form___3ros6",
-	"settings__info": "settings-language-input__settings__info___B4yyo",
-	"settings__label": "settings-language-input__settings__label___1cdMl"
-};
+
 
 /***/ }),
 /* 316 */
@@ -47262,19 +47219,10 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, ".statistics__hidden___1e8Y3 {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.statistics__centered___1mpZZ {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.statistics__text-right___2RRr6 {\n  text-align: right; }\n\n.statistics__text-left___27rcD {\n  text-align: left; }\n\n.statistics__statistics___1vjmM {\n  --bg-color1: #242423;\n  --bg-color2: #313130;\n  --bg-color3: #3e3e3c;\n  --bg-color4: #4b4b49;\n  text-align: center;\n  background-color: var(--bg-color1);\n  color: #f5cb5c;\n  margin-top: 2rem;\n  width: 100vw;\n  left: 0;\n  bottom: 0;\n  position: fixed; }\n  .statistics__statistics__item-container___1MOXn {\n    flex: 1;\n    display: flex;\n    text-align: center;\n    justify-content: center;\n    height: 150px;\n    max-height: 20%; }\n  .statistics__statistics___1vjmM .statistics__main-value___3hUcb {\n    font-size: 2em;\n    line-height: 2em;\n    vertical-align: bottom; }\n  .statistics__statistics___1vjmM .statistics__icon___1EnSv {\n    font-size: 2em;\n    display: inline-block;\n    margin: 0.5rem 1rem 0 0; }\n", ""]);
+exports.push([module.i, ".hidden {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.centered {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.text-right {\n  text-align: right; }\n\n.text-left {\n  text-align: left; }\n\n.statistics {\n  --bg-color1: #242423;\n  --bg-color2: #313130;\n  --bg-color3: #3e3e3c;\n  --bg-color4: #4b4b49;\n  text-align: center;\n  background-color: var(--bg-color1);\n  color: #f5cb5c;\n  margin-top: 2rem;\n  width: 100vw;\n  left: 0;\n  bottom: 0;\n  position: fixed; }\n  .statistics__item-container {\n    flex: 1;\n    display: flex;\n    text-align: center;\n    justify-content: center;\n    height: 150px;\n    max-height: 20%; }\n  .statistics .main-value {\n    font-size: 2em;\n    line-height: 2em;\n    vertical-align: bottom; }\n  .statistics .icon {\n    font-size: 2em;\n    display: inline-block;\n    margin: 0.5rem 1rem 0 0; }\n", ""]);
 
 // exports
-exports.locals = {
-	"hidden": "statistics__hidden___1e8Y3",
-	"centered": "statistics__centered___1mpZZ",
-	"text-right": "statistics__text-right___2RRr6",
-	"text-left": "statistics__text-left___27rcD",
-	"statistics": "statistics__statistics___1vjmM",
-	"statistics__item-container": "statistics__statistics__item-container___1MOXn",
-	"main-value": "statistics__main-value___3hUcb",
-	"icon": "statistics__icon___1EnSv"
-};
+
 
 /***/ }),
 /* 317 */
@@ -47285,16 +47233,10 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, ".main-layout__hidden___13xCl {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.main-layout__centered___3sM-7 {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.main-layout__text-right___2oqGO {\n  text-align: right; }\n\n.main-layout__text-left___3r9lW {\n  text-align: left; }\n\nbody {\n  background-color: #333533;\n  font-family: 'Inconsolata', 'Monaco', monospace; }\n\n.main-layout__world-map___ogHiZ {\n  width: 100%;\n  height: 100%; }\n", ""]);
+exports.push([module.i, ".hidden {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.centered {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.text-right {\n  text-align: right; }\n\n.text-left {\n  text-align: left; }\n\nbody {\n  background-color: #333533;\n  font-family: 'Inconsolata', 'Monaco', monospace; }\n\n.world-map {\n  width: 100%;\n  height: 100%; }\n", ""]);
 
 // exports
-exports.locals = {
-	"hidden": "main-layout__hidden___13xCl",
-	"centered": "main-layout__centered___3sM-7",
-	"text-right": "main-layout__text-right___2oqGO",
-	"text-left": "main-layout__text-left___3r9lW",
-	"world-map": "main-layout__world-map___ogHiZ"
-};
+
 
 /***/ }),
 /* 318 */
@@ -47305,19 +47247,10 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, ".home__hidden___3irOj {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.home__centered___1a_x5 {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.home__text-right___3-qOj {\n  text-align: right; }\n\n.home__text-left___2lh7B {\n  text-align: left; }\n\n.home__home-container___4EGAR {\n  transition: transform 0.5s; }\n  .home__home-container___4EGAR.home__shrink___1KUFL {\n    transform: scale3d(0.7, 0.7, 1); }\n  .home__home-container___4EGAR .home__statistics___2XVAZ {\n    -webkit-animation: home__appear___2aMjU 0.6s;\n    -moz-animation: home__appear___2aMjU 0.6s;\n    -ms-animation: home__appear___2aMjU 0.6s;\n    -o-animation: home__appear___2aMjU 0.6s;\n    animation: home__appear___2aMjU 0.6s; }\n\n@-webkit-keyframes home__appear___2aMjU {\n  0% {\n    opacity: 0; }\n  90% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@-moz-keyframes home__appear___2aMjU {\n  0% {\n    opacity: 0; }\n  90% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@-ms-keyframes home__appear___2aMjU {\n  .home-container .statistics 0% {\n    opacity: 0; }\n  .home-container .statistics 90% {\n    opacity: 0; }\n  .home-container .statistics 100% {\n    opacity: 1; } }\n\n@-o-keyframes home__appear___2aMjU {\n  0% {\n    opacity: 0; }\n  90% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@keyframes home__appear___2aMjU {\n  0% {\n    opacity: 0; }\n  90% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n", ""]);
+exports.push([module.i, ".hidden {\n  position: absolute;\n  overflow: hidden;\n  width: 0;\n  height: 0;\n  pointer-events: none; }\n\n.centered {\n  justify-content: center;\n  align-items: center;\n  text-align: center; }\n\n.text-right {\n  text-align: right; }\n\n.text-left {\n  text-align: left; }\n\n.home-container {\n  transition: transform 0.5s; }\n  .home-container.shrink {\n    transform: scale3d(0.7, 0.7, 1); }\n  .home-container .statistics {\n    -webkit-animation: appear 0.6s;\n    -moz-animation: appear 0.6s;\n    -ms-animation: appear 0.6s;\n    -o-animation: appear 0.6s;\n    animation: appear 0.6s; }\n\n@-webkit-keyframes appear {\n  0% {\n    opacity: 0; }\n  90% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@-moz-keyframes appear {\n  0% {\n    opacity: 0; }\n  90% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@-ms-keyframes appear {\n  .home-container .statistics 0% {\n    opacity: 0; }\n  .home-container .statistics 90% {\n    opacity: 0; }\n  .home-container .statistics 100% {\n    opacity: 1; } }\n\n@-o-keyframes appear {\n  0% {\n    opacity: 0; }\n  90% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n\n@keyframes appear {\n  0% {\n    opacity: 0; }\n  90% {\n    opacity: 0; }\n  100% {\n    opacity: 1; } }\n", ""]);
 
 // exports
-exports.locals = {
-	"hidden": "home__hidden___3irOj",
-	"centered": "home__centered___1a_x5",
-	"text-right": "home__text-right___3-qOj",
-	"text-left": "home__text-left___2lh7B",
-	"home-container": "home__home-container___4EGAR",
-	"shrink": "home__shrink___1KUFL",
-	"statistics": "home__statistics___2XVAZ",
-	"appear": "home__appear___2aMjU"
-};
+
 
 /***/ }),
 /* 319 */
@@ -102774,8 +102707,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./github.corner.sass", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./github.corner.sass");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./github.corner.sass", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./github.corner.sass");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -102800,8 +102733,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./icons.sass", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./icons.sass");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./icons.sass", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./icons.sass");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -102826,8 +102759,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./menu.bar.sass", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./menu.bar.sass");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./menu.bar.sass", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./menu.bar.sass");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -102852,8 +102785,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./settings.button.sass", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./settings.button.sass");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./settings.button.sass", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./settings.button.sass");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -102878,8 +102811,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./settings.form.sass", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./settings.form.sass");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./settings.form.sass", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./settings.form.sass");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -102904,8 +102837,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./settings.language.input.sass", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./settings.language.input.sass");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./settings.language.input.sass", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./settings.language.input.sass");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -102930,8 +102863,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./statistics.sass", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../node_modules/sass-loader/lib/loader.js!./statistics.sass");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./statistics.sass", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./statistics.sass");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -102956,8 +102889,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../node_modules/sass-loader/lib/loader.js!./main.layout.sass", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../node_modules/sass-loader/lib/loader.js!./main.layout.sass");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./main.layout.sass", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./main.layout.sass");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -102982,8 +102915,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../node_modules/sass-loader/lib/loader.js!./home.sass", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../node_modules/sass-loader/lib/loader.js!./home.sass");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./home.sass", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./home.sass");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
