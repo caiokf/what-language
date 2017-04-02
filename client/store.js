@@ -5,22 +5,58 @@ import thunk from 'redux-thunk';
 
 import reducers from './reducers';
 
+const stateAsObject = (state) => {
+  const newState = {};
+
+  Object.keys(state).forEach((x) => {
+    if (Immutable.Iterable.isIterable(state[x])) {
+      newState[x] = state[x].toJS();
+    } else {
+      newState[x] = state[x];
+    }
+  });
+
+  return newState;
+};
+
 const immutableJsLogger = createLogger({
-  stateTransformer: (state) => {
-    let newState = {};
-
-    Object.keys(state).forEach((x) => {
-      if (Immutable.Iterable.isIterable(state[x])) {
-        newState[x] = state[x].toJS();
-      } else {
-        newState[x] = state[x];
-      }
-    });
-
-    return newState;
-  }
+  stateTransformer: stateAsObject,
 });
 
-const middleware = applyMiddleware(thunk, immutableJsLogger);
+const loadState = () => {
+  const savedState = localStorage.getItem('state');
 
-export default createStore(reducers, middleware);
+  if (savedState === null) {
+    return undefined;
+  };
+
+  const parsedState = JSON.parse(savedState);
+  const newState = {
+    options: Immutable.fromJS(parsedState.options),
+    statistics: Immutable.fromJS(parsedState.statistics)
+  };
+
+  return newState;
+};
+
+const saveState = (state) => {
+  try {
+    localStorage.setItem('state', JSON.stringify(state));
+    console.log('saved');
+  }
+  catch (err) {
+    console.log(err)
+  }
+};
+
+const middleware = applyMiddleware(thunk, immutableJsLogger);
+const store = createStore(reducers, loadState(), middleware);
+
+store.subscribe(() => {
+  saveState({
+    options: store.getState().options.toJS(),
+    statistics: store.getState().statistics.toJS(),
+  });
+});
+
+export default store;
