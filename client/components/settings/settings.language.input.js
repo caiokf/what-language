@@ -5,16 +5,12 @@ import { closeSettings } from '../../actions/screens.actions';
 import { handleLanguageInput } from '../../actions/options.actions';
 import './settings.language.input.sass';
 
-import styles from '../../styles/_colors.sass';
-
 const { ENTER, ESCAPE } = Keys;
 
 class SettingsLanguageInput extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    console.log(styles);
-    console.log(styles.$conch);
     this.state = {
       language: ''
     };

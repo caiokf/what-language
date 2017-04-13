@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
 import SettingsButton from './settings.button';
-import ShareButton from './share.button';
 import './menu.bar.sass';
 
 class MenuBar extends React.Component {
@@ -17,7 +16,6 @@ class MenuBar extends React.Component {
     return (
       <div className="menu-bar">
         <SettingsButton />
-        <ShareButton />
       </div>
     );
   }
