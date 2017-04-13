@@ -1,15 +1,24 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Datamap from '../datamap/datamap';
+import './world.map.sass';
+
+const formatNumber = (number) => {
+  const reversedDigits = number.toString().split('').reverse();
+  const withSeparators = reversedDigits.map((n, i) => (i !== 0 && i % 3 === 0 ? n + ',' : n));
+  return withSeparators.reverse().join('');
+}
 
 class WorldMap extends React.Component {
   renderPopup(geography, data) {
-    return `<div class='hoverinfo'>
-      <strong>${data.name}</strong>
+    return `<div class='hoverinfo country-info'>
+      <div class='hover-title'>${data.name}</div>
+      Official Langs: ${data.languages.join(', ')}
+      ${data.unofficialLanguages.length > 0 ? (`<br>
+      Unofficial Langs: ${data.unofficialLanguages.join(', ')}`) : ''}
       <br>
-      Languages: ${data.languages.join(', ')};
-      <br>
-      Population: ${data.population}`;
+      Population: ${formatNumber(data.population)}
+      </div>`;
   }
 
   render() {

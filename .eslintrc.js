@@ -15,6 +15,7 @@ module.exports = {
   globals: {
     expect: true,
     document: true,
+    localStorage: true,
   },
   rules: {
     'no-param-reassign': 'off',
