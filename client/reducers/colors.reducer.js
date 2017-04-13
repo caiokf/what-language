@@ -1,10 +1,9 @@
 const colors = {
-  conch: 'rgba(207, 219, 213, 1)',
-  periglacialBlue: 'rgba(232, 237, 223, 1)',
-  goldYellow: 'rgba(245, 203, 92, 1)',
-  codGray: 'rgba(36, 36, 35, 1)',
-  heavyMetal: 'rgba(51, 53, 51, 1)',
-  tacao: 'rgba(234, 186, 130, 1)'
+  mediumSpring: 'rgba(188, 231, 132, 1)',
+  mediumAquamarine: 'rgba(93, 211, 158, 1)',
+  steelBlue: 'rgba(52, 138, 167, 1)',
+  independence: 'rgba(82, 81, 116, 1)',
+  pineapple: 'rgba(81, 59, 86, 1)',
 };
 
 export default function reducer(state = colors) {

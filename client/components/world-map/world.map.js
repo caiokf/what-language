@@ -22,19 +22,19 @@ class WorldMap extends React.Component {
             responsive
             updateChoroplethOptions={{ reset: false }}
             fills={{
-              defaultFill: this.props.colors.codGray,
-              canCommunicateTo: this.props.colors.goldYellow,
-              canCommunicateToUnofficially: this.props.colors.tacao
+              defaultFill: this.props.colors.pineapple,
+              canCommunicateTo: this.props.colors.mediumAquamarine,
+              canCommunicateToUnofficially: this.props.colors.mediumSpring
             }}
             geographyConfig={{
               popupOnHover: true,
               highlightOnHover: true,
-              highlightFillColor: this.props.colors.heavyMetal,
-              highlightBorderColor: this.props.colors.goldYellow,
+              highlightFillColor: this.props.colors.independence,
+              highlightBorderColor: this.props.colors.steelBlue,
               highlightBorderWidth: 1,
               borderWidth: 0.25,
               borderOpacity: 0.5,
-              borderColor: 'rgba(232, 237, 223, 1)',
+              borderColor: this.props.colors.steelBlue,
               popupTemplate: this.renderPopup
             }}
           />

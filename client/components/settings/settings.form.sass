@@ -11,29 +11,25 @@
   &::before
     content: ''
     @extend %fullscreen
-    background: rgba(0,0,0,0.8)
+    background: rgba(0,0,0,0.55)
 
   &--open
     pointer-events: auto
-
 
 .settings__controls-panel,
 .settings__info
   @extend %transition-disappear
 
-
 .settings--open .settings__controls-panel,
 .settings--open .settings__info
   @extend %transition-appear
-
 
 .settings__controls
   display: flex
   width: 75%
   text-align: left
   pointer-events: none
-  color: $conch
-
+  color: $mediumSpring
 
 .settings__controls-panel
   h3
@@ -46,15 +42,12 @@
     line-height: 1.4
     margin: 0
 
-
 .language
   margin-right: $space2
-
 
 .settings::before
   opacity: 0
   transition: opacity 0.5s
-
 
 .settings--open::before
   opacity: 1
