@@ -28,7 +28,6 @@ export default function reducer(state = defaultStatistics, action) {
       const countriesData = state.get('countriesData').toJS();
       const world = {};
       const languagesSpoken = action.payload.languages;
-      const markUnofficial = options.unofficial;
 
       let people = 0;
       let countries = 0;
@@ -39,11 +38,14 @@ export default function reducer(state = defaultStatistics, action) {
 
         country.unofficialLanguages = country.unofficialLanguages || [];
 
+        const markUnofficial = options.unofficial &&
+          _.intersection(languagesSpoken, country.unofficialLanguages).length > 0;
+
         if (_.intersection(languagesSpoken, country.languages).length > 0) {
           world[country.id].fillKey = 'canCommunicateTo';
           people += country.population;
           countries += 1;
-        } else if (markUnofficial && _.intersection(languagesSpoken, country.unofficialLanguages).length > 0) {
+        } else if (markUnofficial) {
           world[country.id].fillKey = 'canCommunicateToUnofficially';
           people += country.population;
           countries += 1;

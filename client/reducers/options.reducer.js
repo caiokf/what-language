@@ -3,7 +3,7 @@ import _ from 'lodash';
 import languagesData from '../data/languages';
 
 const defaultOptions = fromJS({
-  languagesSpoken: List(['en', 'pt', 'es']),
+  languagesSpoken: List(['en']),
   markCountriesByUnofficialLanguages: true,
 });
 
