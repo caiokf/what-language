@@ -1,15 +1,27 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Datamap from '../datamap/datamap';
+import './world.map.sass';
+
+
+function addCommas(data) {
+  const a = data.toString().split('').reverse();
+  let b = a.map((n, i) => (i !== 0 && i % 3 === 0 ? n + ',' : n));
+  return b.reverse().join('');
+}
+
 
 class WorldMap extends React.Component {
+
   renderPopup(geography, data) {
-    return `<div class='hoverinfo'>
-      <strong>${data.name}</strong>
+    return `<div class='hoverinfo country-info'>
+      <div class='hover-title'>${data.name}</div>
+      Main Langs: ${data.languages.join(', ')}
+      ${data.unofficialLanguages.length > 0 ? (`<br>
+      Unofficial Langs: ${data.unofficialLanguages.join(', ')}`) : ''}
       <br>
-      Languages: ${data.languages.join(', ')};
-      <br>
-      Population: ${data.population}`;
+      Population: ${addCommas(data.population)}
+      </div>`;
   }
 
   render() {
