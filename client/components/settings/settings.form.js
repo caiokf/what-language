@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import keydown from 'react-keydown';
 import SettingsLanguageInput from './settings.language.input';
+import Checkbox from './checkbox';
 import { closeSettings } from '../../actions/screens.actions';
 
 import './settings.form.sass';
@@ -43,8 +44,9 @@ class Settings extends React.Component {
           <Col md={6} className="settings__controls-panel settings__options">
             <h3>&#x21FE; Some different options?</h3>
             <div className="contents">
-              <div>[ x ] Use only official languages</div>
-              <div>[ x ] Some other option</div>
+              <div>
+                <Checkbox>Use only official languages</Checkbox>
+              </div>
             </div>
           </Col>
         </Row>
