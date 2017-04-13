@@ -4,11 +4,11 @@ import languagesData from '../data/languages';
 
 const defaultOptions = fromJS({
   languagesSpoken: List(['en', 'pt', 'es']),
+  markCountriesByUnofficialLanguages: true,
 });
 
 const getLanguageCode = (language) => {
-  let processedLanguage =
-    language.trim().toLowerCase();
+  let processedLanguage = language.trim().toLowerCase();
 
   if (_.isEmpty(processedLanguage)) {
     return '';
@@ -64,6 +64,10 @@ export default function reducer(state = defaultOptions, action) {
           }
           return addLanguage(innerState, word);
         }, state);
+    }
+
+    case 'UNOFFICIAL_LANGUAGES_OPTION': {
+      return state.set('markCountriesByUnofficialLanguages', action.payload)
     }
 
     default:

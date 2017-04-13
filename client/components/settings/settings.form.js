@@ -5,6 +5,7 @@ import keydown from 'react-keydown';
 import SettingsLanguageInput from './settings.language.input';
 import Checkbox from './checkbox';
 import { closeSettings } from '../../actions/screens.actions';
+import { unofficialLanguagesOption } from '../../actions/options.actions';
 
 import './settings.form.sass';
 
@@ -45,7 +46,11 @@ class Settings extends React.Component {
             <h3>&#x21FE; Some different options?</h3>
             <div className="contents">
               <div>
-                <Checkbox>Use only official languages</Checkbox>
+                <Checkbox
+                  checked={ this.props.unofficial }
+                  onChange={ this.props.unofficialLanguagesOption }>
+                  Mark countries by unofficial spoken languages also
+                </Checkbox>
               </div>
             </div>
           </Col>
@@ -59,12 +64,14 @@ const mapStateToProps = (state) => {
   return {
     opened: state.screens.get('settingsOpened'),
     languagesSpoken: state.options.get('languagesSpoken'),
+    unofficial: state.options.get('markCountriesByUnofficialLanguages'),
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     close: () => dispatch(closeSettings()),
+    unofficialLanguagesOption: (value) => dispatch(unofficialLanguagesOption(value)),
   };
 };
 
