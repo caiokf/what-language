@@ -13,7 +13,7 @@ class WorldMap extends React.Component {
   renderPopup(geography, data) {
     return `<div class='hoverinfo country-info'>
       <div class='hover-title'>${data.name}</div>
-      Main Langs: ${data.languages.join(', ')}
+      Official Langs: ${data.languages.join(', ')}
       ${data.unofficialLanguages.length > 0 ? (`<br>
       Unofficial Langs: ${data.unofficialLanguages.join(', ')}`) : ''}
       <br>
