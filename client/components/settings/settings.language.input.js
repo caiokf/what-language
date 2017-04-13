@@ -61,7 +61,15 @@ class SettingsLanguageInput extends React.Component {
           onKeyDown={ this.handleInputKeydown }
           value={this.state.language}
           ref={(input) => { this.languageInput = input; }} />
-        <span className="text-right settings__info">Hit enter to settings or ESC to close</span>
+        <span className="text-right settings__info">Type here the languages you speak. You can enter language name or ISO code.</span>
+        <span className="text-right settings__info">Remove languages by adding a hyphen &quot;-&quot; in front of it.</span>
+        <span className="text-right settings__info">Examples:
+          &quot;English&quot; |
+          &quot;en&quot; |
+          &quot;eng&quot; |
+          &quot;-Spanish&quot; |
+          &quot;-es&quot;.
+        </span>
       </div>
     );
   }
