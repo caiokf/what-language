@@ -42,7 +42,6 @@ const loadState = () => {
 const saveState = (state) => {
   try {
     localStorage.setItem('state', JSON.stringify(state));
-    console.log('saved');
   }
   catch (err) {
     console.log(err)

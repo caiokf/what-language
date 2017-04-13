@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import keydown from 'react-keydown';
 import SettingsLanguageInput from './settings.language.input';
+import Checkbox from './checkbox';
 import { closeSettings } from '../../actions/screens.actions';
+import { unofficialLanguagesOption } from '../../actions/options.actions';
 
 import './settings.form.sass';
 
@@ -43,8 +45,13 @@ class Settings extends React.Component {
           <Col md={6} className="settings__controls-panel settings__options">
             <h3>&#x21FE; Some different options?</h3>
             <div className="contents">
-              <div>[ x ] Use only official languages</div>
-              <div>[ x ] Some other option</div>
+              <div>
+                <Checkbox
+                  checked={ this.props.unofficial }
+                  onChange={ this.props.unofficialLanguagesOption }>
+                  Mark countries by unofficial spoken languages also
+                </Checkbox>
+              </div>
             </div>
           </Col>
         </Row>
@@ -57,12 +64,14 @@ const mapStateToProps = (state) => {
   return {
     opened: state.screens.get('settingsOpened'),
     languagesSpoken: state.options.get('languagesSpoken'),
+    unofficial: state.options.get('markCountriesByUnofficialLanguages'),
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     close: () => dispatch(closeSettings()),
+    unofficialLanguagesOption: (value) => dispatch(unofficialLanguagesOption(value)),
   };
 };
 

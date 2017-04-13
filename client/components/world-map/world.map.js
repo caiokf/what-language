@@ -11,13 +11,22 @@ const formatNumber = (number) => {
 
 class WorldMap extends React.Component {
   renderPopup(geography, data) {
-    return `<div class='hoverinfo country-info'>
-      <div class='hover-title'>${data.name}</div>
-      Official Langs: ${data.languages.join(', ')}
-      ${data.unofficialLanguages.length > 0 ? (`<br>
-      Unofficial Langs: ${data.unofficialLanguages.join(', ')}`) : ''}
-      <br>
-      Population: ${formatNumber(data.population)}
+    let unofficialLanguages = '';
+
+    const officialLanguages = `Official Langs: ${data.languages.join(', ')}`;
+
+    if (data.unofficialLanguages.length > 0) {
+      unofficialLanguages = `Unofficial Langs: ${data.unofficialLanguages.join(', ')}`;
+    }
+
+    const population = `Population: ${formatNumber(data.population)}`;
+
+    return `
+      <div class='hoverinfo country-info'>
+        <div class='hover-title'>${data.name}</div>
+        <div>${officialLanguages}</div>
+        <div>${unofficialLanguages}</div>
+        <div>${population}</div>
       </div>`;
   }
 

@@ -20,6 +20,7 @@ module.exports = {
   rules: {
     'no-param-reassign': 'off',
     'no-unused-expressions': 'off',
+    'jsx-a11y/href-no-hash': 'off',
 
     'react/prop-types': 'off',
     'react/jsx-filename-extension': 'off',
